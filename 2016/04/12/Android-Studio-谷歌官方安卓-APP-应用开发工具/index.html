@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Android Studio - 谷歌官方安卓 APP 应用开发工具 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="软件" />
+    
+    <meta name="description" content="在 Google I/O 大会上，谷歌推出了自家全新的官方安卓软件集成开发工具 Android Studio，当时引起了现场开发者们的一片欢呼,这是 Google 基于 IntelliJ IDEA (一款优秀的 Java 集成开发工具) 修改而来。 谷歌称 Android Studio 将会让开发者更快、更具生产力，它完全免费，跨平台支持 Win / Mac / Linux，是替代 Eclips">
+<meta name="keywords" content="软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio - 谷歌官方安卓 APP 应用开发工具">
+<meta property="og:url" content="http://jef-way.github.com/2016/04/12/Android-Studio-谷歌官方安卓-APP-应用开发工具/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="在 Google I/O 大会上，谷歌推出了自家全新的官方安卓软件集成开发工具 Android Studio，当时引起了现场开发者们的一片欢呼,这是 Google 基于 IntelliJ IDEA (一款优秀的 Java 集成开发工具) 修改而来。 谷歌称 Android Studio 将会让开发者更快、更具生产力，它完全免费，跨平台支持 Win / Mac / Linux，是替代 Eclips">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf.nosdn0.126.net/img/djhlbDd5N3FFVkM5Nnp1a0pGL3NJdWVKRWFkb3RrZ0dhRFMvRG16T2ZVbzM3dUNhUG1JbEhRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:33:02.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Studio - 谷歌官方安卓 APP 应用开发工具">
+<meta name="twitter:description" content="在 Google I/O 大会上，谷歌推出了自家全新的官方安卓软件集成开发工具 Android Studio，当时引起了现场开发者们的一片欢呼,这是 Google 基于 IntelliJ IDEA (一款优秀的 Java 集成开发工具) 修改而来。 谷歌称 Android Studio 将会让开发者更快、更具生产力，它完全免费，跨平台支持 Win / Mac / Linux，是替代 Eclips">
+<meta name="twitter:image" content="http://imglf.nosdn0.126.net/img/djhlbDd5N3FFVkM5Nnp1a0pGL3NJdWVKRWFkb3RrZ0dhRFMvRG16T2ZVbzM3dUNhUG1JbEhRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Android-Studio-谷歌官方安卓-APP-应用开发工具" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Android Studio - 谷歌官方安卓 APP 应用开发工具
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/04/12/Android-Studio-谷歌官方安卓-APP-应用开发工具/" class="article-date">
+            <time datetime="2016-04-12T06:43:00.000Z" itemprop="datePublished">2016-04-12</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/软件/">软件</a>
+    </div>
+
+                阅读数量:<span id="/2016/04/12/Android-Studio-谷歌官方安卓-APP-应用开发工具/" class="leancloud_visitors" data-flag-title="Android Studio - 谷歌官方安卓 APP 应用开发工具"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf.nosdn0.126.net/img/djhlbDd5N3FFVkM5Nnp1a0pGL3NJdWVKRWFkb3RrZ0dhRFMvRG16T2ZVbzM3dUNhUG1JbEhRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Android Studio - 谷歌官方安卓 APP 应用开发工具"></p>
+<p>在 Google I/O 大会上，谷歌推出了自家全新的官方安卓软件集成开发工具 Android Studio，当时引起了现场开发者们的一片欢呼,这是 Google 基于 IntelliJ IDEA (一款优秀的 Java 集成开发工具) 修改而来。</p>
+<p>谷歌称 <strong>Android Studio</strong> 将会让开发者更快、更具生产力，它完全免费，跨平台支持 Win / Mac / Linux，是替代 Eclipse 的最佳安卓开发工具。现在移动 APP 开发正处于热火朝天的阶段，如果你有兴趣研究学习一下Android 软件应用的开发，那么试试 Android Studio 可能会有不少收获哦……</p>
+<h2 id="Google-官方-Android-应用开发工具-IDE"><a href="#Google-官方-Android-应用开发工具-IDE" class="headerlink" title="Google 官方 Android 应用开发工具 IDE"></a>Google 官方 Android 应用开发工具 IDE</h2><p>Android Studio 能让应用开发更简单，它相比以前 Eclipse 的开发工具最大特点就是支持实时渲染（所见即所得），开发者可以在编写程序的同时可以实时看到自己的应用在不同尺寸屏幕中的样子，非常的方便！相信这是无数开发者所一直期待的。</p>
+<p>同时 Android Studio 还解决了语言问题，多语言版本、支持翻译都让开发者更方便地开发适应全球的应用。而且 Android Studio 相比 Eclipse 速度和性能上的表现要优秀得多，相信用过 Eclipse 和 IDEA 的同学一定会深有体会。而且，新版本的 Android Studio 也声称提升了三倍的速度和性能。</p>
+<p><img src="http://imglf1.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3dCt1Q0JLUEpES3ZHd2hHRVIrb0l4S3F4WkRlVlFWK0ZnPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Android Studio"></p>
+<h2 id="Android-Studio-视频介绍"><a href="#Android-Studio-视频介绍" class="headerlink" title="Android Studio 视频介绍"></a>Android Studio 视频介绍</h2><iframe height="480" width="100%" src="http://player.youku.com/embed/XMTUzMjE1MzEyMA" frameborder="0" allowfullscreen></iframe>
+<h2 id="Android-Studio-的一些特色"><a href="#Android-Studio-的一些特色" class="headerlink" title="Android Studio 的一些特色"></a>Android Studio 的一些特色</h2><h3 id="即时运行"><a href="#即时运行" class="headerlink" title="即时运行"></a>即时运行</h3><p><img src="http://imglf2.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3aE9uWWZLRVZ6VmE5ZUhjMnN3RUZScmdpTTlkTk1oQ1ZRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="即时运行"></p>
+<p>按设备或仿真器上运行的代码和资源更改您的应用程序，能马上看到它的变化，即时运行大大加快您的编辑，编译和运行周期，保持你“流畅”感觉</p>
+<h3 id="智能代码编辑器"><a href="#智能代码编辑器" class="headerlink" title="智能代码编辑器"></a>智能代码编辑器</h3><p><img src="http://imglf1.nosdn0.126.net/img/djhlbDd5N3FFVkJqOVFmVkVUUHVtZ05QallGRGt0OHZqK3ZyZm84ckpiMVBGYWRyT2hrNXJnPT0.gif" alt="智能代码编辑器"></p>
+<p>编写更好的代码，运行速度更快，并具有智能代码编辑器，可以帮助你的每一步更富有成效。</p>
+<p>Android的工作室是建立在的IntelliJ和能够先进的代码完成，重构和代码分析。</p>
+<h3 id="快速和功能丰富的仿真器"><a href="#快速和功能丰富的仿真器" class="headerlink" title="快速和功能丰富的仿真器"></a>快速和功能丰富的仿真器</h3><p><img src="http://imglf.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3dDRFdmJpWnhCMlZPVWk1S0hId2R5cXNnOERDQjZNT0pBPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="快速和功能丰富的仿真器"></p>
+<p>安装并运行你的应用程序比使用物理设备速度更快，在几乎所有的Andr​​oid设备配置测试您的应用程序：Android手机，Android平板电脑，Android Wear和Android TV设备。</p>
+<p>新的Andr​​oid模拟器2.0比以往任何时候都更快，允许你动态调整仿真器和访问一套传感器控制。</p>
+<h3 id="强大而灵活的构建系统"><a href="#强大而灵活的构建系统" class="headerlink" title="强大而灵活的构建系统"></a>强大而灵活的构建系统</h3><p><img src="http://imglf0.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3amxsd2NnYkkrd2xpNEJWOUpOMmRDU2lhekJJYzN0VU93PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="强大而灵活的构建系统"></p>
+<p>轻松地配置您的项目，包括代码库，并​​从单个项目中的多个变种版本。</p>
+<p>随着摇篮，Android的Studio提供高性能的构建自动化，强大的依赖管理，并定制构建配置。</p>
+<h3 id="适配所有Android设备"><a href="#适配所有Android设备" class="headerlink" title="适配所有Android设备"></a>适配所有Android设备</h3><p><img src="http://imglf1.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3bjFQZW1UODJEYndRU2pIWGExZXd6bm11MFJ2QjNoU2t3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="适配所有Android设备"></p>
+<p>针对多种外形尺寸与一个单一的项目，以轻松共享不同版本的应用程序之间的代码。</p>
+<p>Android的Studio提供了一个统一的环境中开发Android手机，平板电脑，Android Wear，Android的电视和Android应用程序自动。</p>
+<h3 id="代码模板和GitHub上的整合"><a href="#代码模板和GitHub上的整合" class="headerlink" title="代码模板和GitHub上的整合"></a>代码模板和GitHub上的整合</h3><p><img src="http://imglf1.nosdn0.126.net/img/djhlbDd5N3FFVkNqWDArN0toeTV3cGtwOGVwRUZ5anZiaHZkN21tVWFTUGYvTDlKYTZWR1RBPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="代码模板和GitHub上的整合"></p>
+<p>开始的模式，如导航抽屉，查看传呼机，或从GitHub进口谷歌代码示例代码模板项目。</p>
+<p>Android的Studio的项目向导使它比以往更容易在新项目中添加代码。</p>
+<ul>
+<li>Instant Run 即时运行代码</li>
+<li>Android Emulator 新的安卓模拟器</li>
+<li>云端测试实验室集成</li>
+<li>应用索引代码生成与测试</li>
+<li>GPU调试器预览</li>
+<li>IntelliJ 15 更新</li>
+</ul>
+<h2 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h2><p>工欲善其事，必先利其器;作为 Google 官方推出的全新工具，Android Studio 必然将会成为安卓软件开发中最流行的工具之一;既然是完全免费的，我们没有理由不去学习和使用它;不过由于我本身并没有做过 Android 的项目，对于这个 IDE 没什么心得，所以就不写什么教程之类的东西来丢人了。</p>
+<p>相比 iOS 开发需要购买 Mac 电脑以及 iPhone / iPad 等设备，Android 开发相对来说初期投入成本会低一些。大家有兴趣的可以自己把玩一下，学习开发其实并不难，重在动手，玩着玩着说不定就能轻松入门了……当然，如果你有好的教程也可以告诉我分享出来大家学习学习。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><a href="http://androiddevtools.cn/" target="_blank" rel="noopener">下载 Android Studio 安卓应用开发工具(Win)</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/13/字如其人-造字工房正版字体下载/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            字如其人 - 造字工房正版字体下载
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/04/11/React-Native-Windows下搭建React-Native开发环境/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">React Native - Windows下搭建React Native开发环境</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

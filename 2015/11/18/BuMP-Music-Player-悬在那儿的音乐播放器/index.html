@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>BuMP Music Player - 悬在那儿的音乐播放器 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="APP" />
+    
+    <meta name="description" content="由于工作的原因，最近开始频繁的使用手机长时间阅读文字，而作为一个音乐爱好者，在阅读的同时怎么能不听歌呢？然而使用过常用的几款音乐播放器之后，我发现它们并不能满足我的需求。 因为在阅读过程中，为了切歌而切换应用非常打扰阅读体验，而传统的应用采取的下拉状态栏切歌只能切换上下曲，选择非常有限。所以经过总结，我希望有一款这样的播放器：  快捷切歌，无需切换应用 快捷搜索 主动显示歌名 轻量级  从朋友那">
+<meta name="keywords" content="APP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BuMP Music Player - 悬在那儿的音乐播放器">
+<meta property="og:url" content="http://jef-way.github.com/2015/11/18/BuMP-Music-Player-悬在那儿的音乐播放器/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="由于工作的原因，最近开始频繁的使用手机长时间阅读文字，而作为一个音乐爱好者，在阅读的同时怎么能不听歌呢？然而使用过常用的几款音乐播放器之后，我发现它们并不能满足我的需求。 因为在阅读过程中，为了切歌而切换应用非常打扰阅读体验，而传统的应用采取的下拉状态栏切歌只能切换上下曲，选择非常有限。所以经过总结，我希望有一款这样的播放器：  快捷切歌，无需切换应用 快捷搜索 主动显示歌名 轻量级  从朋友那">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkJpTU1UTlZEbTZaODlDWEdKNUttVEg1cHhCWGM5MFBBUklSamU4dk16QXVRPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:42:16.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BuMP Music Player - 悬在那儿的音乐播放器">
+<meta name="twitter:description" content="由于工作的原因，最近开始频繁的使用手机长时间阅读文字，而作为一个音乐爱好者，在阅读的同时怎么能不听歌呢？然而使用过常用的几款音乐播放器之后，我发现它们并不能满足我的需求。 因为在阅读过程中，为了切歌而切换应用非常打扰阅读体验，而传统的应用采取的下拉状态栏切歌只能切换上下曲，选择非常有限。所以经过总结，我希望有一款这样的播放器：  快捷切歌，无需切换应用 快捷搜索 主动显示歌名 轻量级  从朋友那">
+<meta name="twitter:image" content="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkJpTU1UTlZEbTZaODlDWEdKNUttVEg1cHhCWGM5MFBBUklSamU4dk16QXVRPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-BuMP-Music-Player-悬在那儿的音乐播放器" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        BuMP Music Player - 悬在那儿的音乐播放器
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2015/11/18/BuMP-Music-Player-悬在那儿的音乐播放器/" class="article-date">
+            <time datetime="2015-11-18T09:59:00.000Z" itemprop="datePublished">2015-11-18</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/APP/">APP</a>
+    </div>
+
+                阅读数量:<span id="/2015/11/18/BuMP-Music-Player-悬在那儿的音乐播放器/" class="leancloud_visitors" data-flag-title="BuMP Music Player - 悬在那儿的音乐播放器"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkJpTU1UTlZEbTZaODlDWEdKNUttVEg1cHhCWGM5MFBBUklSamU4dk16QXVRPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="BuMP Music Player - 悬在那儿的音乐播放器"></p>
+<p>由于工作的原因，最近开始频繁的使用手机长时间阅读文字，而作为一个音乐爱好者，在阅读的同时怎么能不听歌呢？然而使用过常用的几款音乐播放器之后，我发现它们并不能满足我的需求。</p>
+<p>因为在阅读过程中，为了切歌而切换应用非常打扰阅读体验，而传统的应用采取的下拉状态栏切歌只能切换上下曲，选择非常有限。所以经过总结，我希望有一款这样的播放器：</p>
+<ul>
+<li>快捷切歌，无需切换应用</li>
+<li>快捷搜索</li>
+<li>主动显示歌名</li>
+<li>轻量级</li>
+</ul>
+<p>从朋友那儿得到推荐的 BuMP Music Player 很好满足了我的需求。</p>
+<h2 id="没有繁杂，只有音乐"><a href="#没有繁杂，只有音乐" class="headerlink" title="没有繁杂，只有音乐"></a>没有繁杂，只有音乐</h2><p>作为音乐播放器，BuMP 可以算是一个异类，它舍弃了传统的应用界面，以「悬浮窗」的方式呈现，打开应用不会有欢迎界面，只有一个显示专辑封面的圆点出现在屏幕左上角，环绕圆点的弧线是音乐的进度条。如此简单，让我在阅读的时候都感觉不到它的存在，但是却触手可及。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/11/04/c6c6d80b009071a044d3b4bcfc4b173047262_mw_800_wm_1_wmp_3.jpg" alt="BuMP Music Player"></p>
+<p>点击 BuMP，就可以展开播放列表：随机、循环、播放/暂停、上/下一曲，常见的按钮都可以在这个界面看见。我可以在阅读的同时方便的查看我的音乐播放列表，选中我想听的歌，而不需要切换应用或者不停的点击「下一曲」，毕竟这些复杂的操作都极其打扰我的阅读体验。此外，它还支持Spotify，不过我不用它，就略过了。</p>
+<p><img src="http://sspai.com/attachment/origin/2015/11/04/291419.gif" alt="BuMP Music Player"></p>
+<h2 id="简单就是效率"><a href="#简单就是效率" class="headerlink" title="简单就是效率"></a>简单就是效率</h2><p>点击右上角的音乐专辑标志，BuMP 可以按照专辑或者音乐家分类音乐，然而我最喜欢的就是搜索功能，几乎没有延迟，输入即见结果，能够为你省下更多的时间来继续你的阅读。如果误触添加了不想听的歌曲怎么办？不要紧，你可以点击「UNDO」来反悔。</p>
+<p><img src="http://sspai.com/attachment/origin/2015/11/04/291420.gif" alt="BuMP Music Player"></p>
+<p>其实我在使用过程中也曾迷惑过，因为我经常只想听某一段副歌，而 BuMP 并没有告诉我怎么快进/快退。在一阵摸索之后，我终于发现它的巧妙之处：点开播放列表之后，在上方空白处点击并向两遍滑动就能实现快进/快退，滑动的距离决定了快进/快退的速度。</p>
+<p><img src="http://sspai.com/attachment/origin/2015/11/04/291421.gif" alt="BuMP Music Player"></p>
+<h2 id="安静而不叨扰"><a href="#安静而不叨扰" class="headerlink" title="安静而不叨扰"></a>安静而不叨扰</h2><p>在你阅读的时候，你可以让 BuMP 静静地躺在左上角，在每一首歌开始的时候，它会弹出歌曲的名称，并不只是为了炫酷，很多时候我们都会好奇现在这首歌的歌名是什么，这种情况下，这个细节往往能省去你一步操作。</p>
+<p><img src="http://sspai.com/attachment/origin/2015/11/04/291423.gif" alt="BuMP Music Player"></p>
+<p>此外，BuMP 不会跑到屏幕中间打扰你的阅读，你把它挪到中间它都会自动吸附到屏幕边缘。如果你想关闭它，很简单，将它移动到最下方的垃圾桶标志上就可以了。</p>
+<p><img src="http://sspai.com/attachment/origin/2015/11/04/291424.gif" alt="BuMP Music Player"></p>
+<p>几天的使用下来，BuMP 已经进入了我的「必备应用清单」，能够在手机阅读时舒服的听歌，随「触」可及而又毫不叨扰，没有多余的网络服务和复杂界面，轻巧、好用。虽然它对于线控的支持并不好（不支持双击下一曲，三击上一曲），对于播放列表的编辑支持也不到位，但是这也不妨碍我在阅读的时候打开它好好享受。</p>
+<p>如果你跟我一样，喜欢拿手机阅读，同时享受音乐，不妨试一试 BuMP。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><a href="http://pan.baidu.com/s/1o6D1yx8" target="_blank" rel="noopener">下载Bump Music Player</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/11/19/Smooth-让你体验到不同的刷微博体验/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Smooth - 让你体验到不同的刷微博体验
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2015/11/16/Notation-极简轻盈高效的纯文本笔记工具软件/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Notation - 极简轻盈高效的纯文本笔记工具软件</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Brackets - 免费、开源、跨平台的Web前端开发工具 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="编辑器" />
+    
+    <meta name="description" content="Brackets 是一个免费、开源且跨平台的 HTML/CSS/JavaScript 前端 WEB 集成开发环境 ，它是由 Adobe 创建和维护，根据MIT许可证发布，支持 Windows、Linux 以及 OS X 平台。 Brackets 的特点是简约、优雅、快捷！它没有很多的视图或者面板，也没太多花哨的功能，它的核心目标是减少在开发过程中那些效率低下的重复性工作，例如浏览器刷新，修改元素">
+<meta name="keywords" content="编辑器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brackets - 免费、开源、跨平台的Web前端开发工具">
+<meta property="og:url" content="http://jef-way.github.com/2016/04/22/Brackets-免费、开源、跨平台的Web前端开发工具/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="Brackets 是一个免费、开源且跨平台的 HTML/CSS/JavaScript 前端 WEB 集成开发环境 ，它是由 Adobe 创建和维护，根据MIT许可证发布，支持 Windows、Linux 以及 OS X 平台。 Brackets 的特点是简约、优雅、快捷！它没有很多的视图或者面板，也没太多花哨的功能，它的核心目标是减少在开发过程中那些效率低下的重复性工作，例如浏览器刷新，修改元素">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTdjNreUlESHkvQjlKVmFJRW9xMnJXWlZDVGRZQmo1aUxnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:23:36.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Brackets - 免费、开源、跨平台的Web前端开发工具">
+<meta name="twitter:description" content="Brackets 是一个免费、开源且跨平台的 HTML/CSS/JavaScript 前端 WEB 集成开发环境 ，它是由 Adobe 创建和维护，根据MIT许可证发布，支持 Windows、Linux 以及 OS X 平台。 Brackets 的特点是简约、优雅、快捷！它没有很多的视图或者面板，也没太多花哨的功能，它的核心目标是减少在开发过程中那些效率低下的重复性工作，例如浏览器刷新，修改元素">
+<meta name="twitter:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTdjNreUlESHkvQjlKVmFJRW9xMnJXWlZDVGRZQmo1aUxnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Brackets-免费、开源、跨平台的Web前端开发工具" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Brackets - 免费、开源、跨平台的Web前端开发工具
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/04/22/Brackets-免费、开源、跨平台的Web前端开发工具/" class="article-date">
+            <time datetime="2016-04-22T03:05:00.000Z" itemprop="datePublished">2016-04-22</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/编辑器/">编辑器</a>
+    </div>
+
+                阅读数量:<span id="/2016/04/22/Brackets-免费、开源、跨平台的Web前端开发工具/" class="leancloud_visitors" data-flag-title="Brackets - 免费、开源、跨平台的Web前端开发工具"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTdjNreUlESHkvQjlKVmFJRW9xMnJXWlZDVGRZQmo1aUxnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets - 免费、开源、跨平台的Web前端开发工具"></p>
+<p><strong>Brackets</strong> 是一个免费、开源且跨平台的 HTML/CSS/JavaScript 前端 WEB 集成开发环境 ，它是由 Adobe 创建和维护，根据MIT许可证发布，支持 Windows、Linux 以及 OS X 平台。</p>
+<p><strong>Brackets</strong> 的特点是简约、优雅、快捷！它没有很多的视图或者面板，也没太多花哨的功能，它的核心目标是减少在开发过程中那些效率低下的重复性工作，例如浏览器刷新，修改元素的样式，搜索功能等等。和 Sublime Text、Everedit 等通用代码编辑器不一样，Brackets 是专门针对 WEB 前端开发而生……</p>
+<h2 id="Brackets-优秀免费的开源前端开发工具演示视频"><a href="#Brackets-优秀免费的开源前端开发工具演示视频" class="headerlink" title="Brackets - 优秀免费的开源前端开发工具演示视频"></a>Brackets - 优秀免费的开源前端开发工具演示视频</h2><iframe height="480" width="100%" src="http://player.youku.com/embed/XMTU0Mzg3Njc0OA" frameborder="0" allowfullscreen></iframe>
+<h2 id="使用Brackets项目设置"><a href="#使用Brackets项目设置" class="headerlink" title="使用Brackets项目设置"></a>使用Brackets项目设置</h2><p>Brackets 的整个界面很简洁，顶部主要是菜单栏，左侧为项目组织结构的文件树，使用 <code>Ctrl/Cmd+Shift+H</code> 可以呼出与关闭文件树，右侧为编辑区分为文档区域和提示区域。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTbmxvMTNXbmVDUFVRSERUTGlRUXFWUFlTaW9oNXB4d3VBPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="brackets"></p>
+<p>你可一通过 <code>文件 &amp;gt; 打开目录...</code> 命令打开项目文件夹，左侧文件树项目名更新为项目文件夹名，文件树更新为当前项目的文件树。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTdVZqRmtZMFRVckE5Sm9LQ0dtSnJDV1VuN1dDdjVmZnN3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="brackets 打开项目"></p>
+<p>在项目名上单击左键，编辑菜单会显示历史项目，这样可以切换到之前的项目</p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTditkeTluQ2VoMmk2cGorQUM3WWphRllzc04zTm0rVXl3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets"></p>
+<h2 id="Brackets-的文件编辑能力"><a href="#Brackets-的文件编辑能力" class="headerlink" title="Brackets 的文件编辑能力"></a>Brackets 的文件编辑能力</h2><h3 id="Brackets-快速编辑样式"><a href="#Brackets-快速编辑样式" class="headerlink" title="Brackets 快速编辑样式"></a>Brackets 快速编辑样式</h3><p>Brackets 有快速编辑样式的能力，你只要把光标放在一个 <code>class</code> 或 <code>id</code> 属性的标签名称上，按下 <code>Ctrl/Cmd + E</code>就能开启它的样式编辑能力，再按一下是关闭编辑，Brackets 会搜索项目下所有CSS文件，然后打开一个内嵌的编辑器嵌入在HTML文件中，可以让你迅速修改CSS代码。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTa1I3cUVuSlFpazdUbnJWaU03ZW9OMnBoWWlBZW8wOHpBPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="brackets 快速编辑样式"></p>
+<p>当前 <code>class/id</code> 标签有多处样式定义时，编辑窗口提供切换按钮来切换显示样式，也可以使用 <code>Alt + Up/Down</code> 箭头键切换;</p>
+<p>需要注意的是，Brackets会检测当前html文档以及项目下所有CSS文件来查找class/id样式，即使某些CSS文件在当前html文档中未被引用到。</p>
+<p>Brackets同样支持对JS对象定义的快速预览/编辑，把光标放在一个js函数名称上，按下 <code>Ctrl/Cmd + E</code> 进行编辑或退出编辑。</p>
+<h3 id="Brackets-快速选择颜色"><a href="#Brackets-快速选择颜色" class="headerlink" title="Brackets 快速选择颜色"></a>Brackets 快速选择颜色</h3><p>Brackets内建取色器，提供RGBa、HEX、HSLa的颜色编码形式，把光标放在一个颜色编码上，按下 <code>Ctrl/Cmd + E</code>来进行颜色选取或退出取色器窗口需要使用Esc键。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNjeldRRG9vL3V5c0IwOHFDUEFiU1ZucTV3Y3l3OGlmVlB4bXFDMi9PcE9nPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets 快速选择颜色"></p>
+<h2 id="Brackets-的即时预览功能"><a href="#Brackets-的即时预览功能" class="headerlink" title="Brackets 的即时预览功能"></a>Brackets 的即时预览功能</h2><p>Brackets提供网页即时预览功能，使用该功能时，Brackets调用 Chrome 浏览器打开当前页面，此后修改html、css、javascript并保存后，所修改的内容会即时响应到浏览器中的页面，无须手动刷新页面；这是 Brackets 最大的一个亮点，有两个显示器的coder有福了，可以分屏显示Brackets和chrome，即时修改即时预览，无需切换编辑器/浏览器和刷新页面。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTZ0QvbXZDb3VrQWxnMW9iWTBHTDdSd3lKdEx5SjQza3p3PT0.png?imageView&amp;thumbnail=1920y1038&amp;type=jpg&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets"></p>
+<p><strong>目前即时预览功能的一些限制：</strong></p>
+<p>它仅适用于 Chrome 浏览器为目标浏览器，你必须安装 Google Chrome。</p>
+<p>它依赖于在Chrome浏览器中的远程调试功能，这是一个命令行标志启用。在Mac上，如果你已经在使用Chrome浏览器，这时启动“即时预览”，Brackets将询问你是否要重新启动Chrome浏览器启用远程调试功能。</p>
+<p>只能同时对一个HTML文件进行预览 - 如果切换另一个HTML文件，Brackets将关闭原来的预览。</p>
+<h2 id="Brackets-的部分快捷键"><a href="#Brackets-的部分快捷键" class="headerlink" title="Brackets 的部分快捷键"></a>Brackets 的部分快捷键</h2><ul>
+<li>Ctrl/Cmd+Shift+H 可以呼出与关闭文件树</li>
+<li>Ctrl/Cmd + E 快速预览/编辑 css样式/javascript函数</li>
+<li>Ctrl/Cmd + +/- 放大缩小编辑区字体大小</li>
+<li>Ctrl/Cmd + 0 重置编辑区字体大小</li>
+<li>Ctrl/Cmd + Alt + P 打开即时预览功能</li>
+<li>Ctrl/Cmd + / 行注释</li>
+<li>Ctrl/Cmd + Alt + / 块注释</li>
+<li>注：css代码、html代码注释时只能使用块注释快捷键</li>
+</ul>
+<p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTb2JDbVQ4L2hFWElzTDFoQVhhMWlFdEpDWEdQZks3emtRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets"></p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkQ3YXpjK1ZKY1RTa2F2L1cyNmVJNnFPcjJlVGZiQzBPUT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Brackets"></p>
+<p>总的来说，Brackets 潜力巨大，而且现在 WEB 前端开发需求极其旺盛，真正好用强大的免费工具也不是特别多，加上 Brackets 开源，支持多平台，所以还是非常值得尝试与学习的，希望这款开发工具可以对你有所帮助吧</p>
+<h2 id="相关文件下载"><a href="#相关文件下载" class="headerlink" title="相关文件下载"></a>相关文件下载</h2><blockquote>
+<p><a href="http://brackets.io/" target="_blank" rel="noopener">官方网站</a><br><a href="http://pan.baidu.com/s/1o81owZo" target="_blank" rel="noopener">下载 Brackets</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/23/Google-手写输入法-可连续手写，识别率高且速度流畅！/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Google 手写输入法 - 可连续手写，识别率高且速度流畅！
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/04/21/Tickeys-找对打字的感觉/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Tickeys - 找对打字的感觉</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

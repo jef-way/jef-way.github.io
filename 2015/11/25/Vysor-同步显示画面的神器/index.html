@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Vysor - 同步显示画面的神器 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="APP" />
+    
+    <meta name="description" content="虽然现在各种如 ARC Welder / Genymotion / Andy 等安卓模拟器可以让你在电脑上运行手机 APP 或玩手机游戏，但还有很多人希望能直接在电脑上远程控制手机真机，或在电脑上同步显示手机的画面！ Vysor 是一款可以免费让你 在电脑上控制 Android 手机/平板的软件！它实用性超高，不仅可以将安卓手机的屏幕画面实时同步投影显示在电脑的屏幕上，甚至还能直接在电脑上对手机">
+<meta name="keywords" content="APP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vysor - 同步显示画面的神器">
+<meta property="og:url" content="http://jef-way.github.com/2015/11/25/Vysor-同步显示画面的神器/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="虽然现在各种如 ARC Welder / Genymotion / Andy 等安卓模拟器可以让你在电脑上运行手机 APP 或玩手机游戏，但还有很多人希望能直接在电脑上远程控制手机真机，或在电脑上同步显示手机的画面！ Vysor 是一款可以免费让你 在电脑上控制 Android 手机/平板的软件！它实用性超高，不仅可以将安卓手机的屏幕画面实时同步投影显示在电脑的屏幕上，甚至还能直接在电脑上对手机">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtna2ZsQkRhMGEvRlNXd1djZnk5bTNLeHVWT1RybHBibDl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:45:28.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vysor - 同步显示画面的神器">
+<meta name="twitter:description" content="虽然现在各种如 ARC Welder / Genymotion / Andy 等安卓模拟器可以让你在电脑上运行手机 APP 或玩手机游戏，但还有很多人希望能直接在电脑上远程控制手机真机，或在电脑上同步显示手机的画面！ Vysor 是一款可以免费让你 在电脑上控制 Android 手机/平板的软件！它实用性超高，不仅可以将安卓手机的屏幕画面实时同步投影显示在电脑的屏幕上，甚至还能直接在电脑上对手机">
+<meta name="twitter:image" content="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtna2ZsQkRhMGEvRlNXd1djZnk5bTNLeHVWT1RybHBibDl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Vysor-同步显示画面的神器" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Vysor - 同步显示画面的神器
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2015/11/25/Vysor-同步显示画面的神器/" class="article-date">
+            <time datetime="2015-11-25T08:12:00.000Z" itemprop="datePublished">2015-11-25</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/APP/">APP</a>
+    </div>
+
+                阅读数量:<span id="/2015/11/25/Vysor-同步显示画面的神器/" class="leancloud_visitors" data-flag-title="Vysor - 同步显示画面的神器"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtna2ZsQkRhMGEvRlNXd1djZnk5bTNLeHVWT1RybHBibDl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Vysor - 同步显示画面的神器"></p>
+<p>虽然现在各种如 ARC Welder / Genymotion / Andy 等安卓模拟器可以让你在电脑上运行手机 APP 或玩手机游戏，但还有很多人希望能直接在电脑上远程控制手机真机，或在电脑上同步显示手机的画面！</p>
+<p><strong>Vysor</strong> 是一款可以免费让你 <strong>在电脑上控制 Android 手机/平板的软件</strong>！它实用性超高，不仅可以将安卓手机的屏幕画面实时同步投影显示在电脑的屏幕上，甚至还能直接在电脑上对手机进行远程控制操作！而且它是一款Chrome 浏览器插件应用，可跨平台支持 Win / Mac / Linux，用途非常广泛，绝对是手机控的必备神器……</p>
+<h2 id="Vysor-电脑“远程”控制-Android-安卓手机的超实用工具！"><a href="#Vysor-电脑“远程”控制-Android-安卓手机的超实用工具！" class="headerlink" title="Vysor - 电脑“远程”控制 Android 安卓手机的超实用工具！"></a>Vysor - 电脑“远程”控制 Android 安卓手机的超实用工具！</h2><p>通过 Vysor 我们不仅能在电脑上同步看到手机的实时动态画面，而且还能通过键盘和鼠标直接控制手机！！Vysor 可以应用在很多场景，譬如对于上班一族来说，工作时不再需要偷偷低头拿着手机了，直接在电脑上就能收发微信、玩游戏、炒股、下载安装或使用各种 APP 等等。</p>
+<p><img src="http://imglf.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41MXlSK21GV3JVOFBFeUY5ZTJ5em1KUDB6VFI4Tndmdy9RPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>而一些原本需手机辅助或必须在手机上完成的工作 (如收发短信/查看通话记录/管理编辑手机上的文档等)，通过电脑鼠标以及键盘操作起来也会变得更高效便利，善加利用绝对可以提高不少效率。</p>
+<p>而且对于一些 IT 相关行业用户以及 APP 开发者等，利用屏幕镜像投射以及控制功能，在会议上演示手机 APP 功能、展示手机上的各种文档或内容、测试应用或移动网页、为 APP 录像或截图、录制视频教程、写评测图文等等都会非常方便……</p>
+<p><img src="http://imglf.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41em5JejFTdEg0Wll6dWU2Nm1GTHV0clowKzZOa2FERUFRPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>另外，如果你再搭配「PushBullet (子弹推送)」等消息推送工具一起使用风味更佳！你完全可以不拿起手机就能在电脑前完成几乎所有手机上的工作，真正的电脑与手机合一了！</p>
+<h2 id="Vysor-电脑控制-Android-手机软件演示视频："><a href="#Vysor-电脑控制-Android-手机软件演示视频：" class="headerlink" title="Vysor 电脑控制 Android 手机软件演示视频："></a>Vysor 电脑控制 Android 手机软件演示视频：</h2><iframe height="480" width="100%" src="http://player.youku.com/embed/XMTM1NzMwNTYxMg" frameborder="0" allowfullscreen></iframe>
+<h2 id="Vysor-电脑控制手机工具的特点介绍"><a href="#Vysor-电脑控制手机工具的特点介绍" class="headerlink" title="Vysor 电脑控制手机工具的特点介绍"></a>Vysor 电脑控制手机工具的特点介绍</h2><p>Vysor 并不是一款传统的应用程序，而是作为一个 Chrome 浏览器扩展程序 存在，称之为 Chrome App。之前介绍过的 ARC Welder 安卓模拟器 也是这种形式的浏览器扩展插件应用，它们可以运行在任何能安装和运行谷歌 Chrome 浏览器的操作系统上，包括 Win / Mac / Linux / ChromeOS。不过由于众所周知的原因，你必须「番·羽·土·啬」之后才能下载谷歌浏览器以及 Vysor 扩展。</p>
+<p>除了免费与跨平台外，Vysor 还有一个很大的优点，就是手机并不需要 ROOT 权限，也不需安装任何 APP。你需要的，仅仅只是一条 USB 数据线并在电脑上装好 Vysor 即可。它跟之前推荐过的电脑远程控制 Android 设备的工具 Teamviewer QuickSupport 不一样，Teamviewer 强制要求 ROOT 权限，电脑跟手机都要安装 APP，远程控制是基于无线网络通信的。而 <strong>Vysor 完全免 ROOT</strong>，要通过 USB 数据线连接手机和电脑，不过 USB 传输相比网络更加高速可靠，因此 Vysor 的速度也更为流畅稳定，画面也更清晰。实际试用看来控制速度还算让人满意，实用性很高！</p>
+<h2 id="Vysor-使用方法教程"><a href="#Vysor-使用方法教程" class="headerlink" title="Vysor 使用方法教程"></a>Vysor 使用方法教程</h2><p><strong>1、下载：</strong>由于 Vysor 是一款 Chrome 扩展应用，因此你需要先安装好 Google Chrome 谷歌浏览器，再安装 Vysor 扩展，但下载它们俩均需要先「番·羽·土·啬」才行。(两者的下载地址均位于本文结尾处提供)</p>
+<p><strong>2、手机开启 USB 调试模式：</strong>这只需设置一次即可，但是必须启用该选项后 Vysor 才能连接到你的手机。在大多数安卓手机上这个选项是被隐藏起来的，你需要进入「设置→关于手机」，找到「版本号」一栏并连续点击它多次，系统就会弹出“开启开发者选项”的消息了。然后找到「设置→开发者选项→USB调试」开启即可。</p>
+<p><img src="http://imglf.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41K2haS21LZTliWG5tMGRrVFNsa1VzNWh3ZFZ0S1c5aTdRPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p><strong>3、安装 ADB Driver 驱动：</strong>如果你在 Windows 系统下使用 Vysor，那么还需要安装一个 ADB Driver 驱动 (Mac 下不需要)，安卓开发者应该很熟悉了。如果你是普通用户，可以下载作者提供的 <strong>Universal ADB Driver(通用 ADB 驱动)</strong> 安装好即可，实测 Windows 10 系统下可用。</p>
+<p><strong>4、将手机通过 USB 数据线连接到电脑</strong>，并启动 Vysor。如果界面上没有列出你的手机或平板，这时按下界面上的 Find Device (搜寻设备) 按钮即可刷出来。</p>
+<p><img src="http://imglf2.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41LzVrdzdCTmZ5b0MzVVB3NlZ1bHY3ZlhDOEE0TFBxOHVnPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>之后，在列表中选择的手机名称并按下「选择」键即可连接。Vysor 可以支持一次连接多台 Android 手机或平板设备。</p>
+<p><img src="http://imglf.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41eTNFTWZ3NFVuYnBZWEFET2xKRHkwYTQ0RXdCWDIxV1JRPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>首次连接成功后，手机上会弹出对话框问你是否允许连接 (下图左)，选择是即可。此时 Vysor 会自动在你的手机上安装上 Vysor 的 APP，提示连接成功后(下图右)，我们便可在电脑上看到手机画面了。这时你也可以通过鼠标对手机进行操作，手机也是跟着同步响应的；反之在手机上操作，电脑上的显示也会随之变化。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41eTZtTFFqNjNsMU1NSm5RM1ZsdEwzeDc0a0w2M0kzK1pRPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>Vysor 键盘和鼠标对手机进行操作的对应关系如下：鼠标左键 = 手指点击、键盘 Esc / 鼠标右键 = 手机返回键、F1 = 菜单键、键盘 Home 键 / 鼠标中键 = 手机 Home 键。</p>
+<p>好了，就是这么简单。之后你就可以在电脑上控制手机做任何爱做的事了 HoHohoho …… 上班玩游戏炒股发短信？启动手机摄像头各种拍？反正随你……</p>
+<p><img src="http://imglf1.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41MEt0aEpWclVDM0p0SDU3eDF3akxoaDJNbHRwZHFPcDVBPT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>不得不说，对于像小编一样经常需要给手机截屏的，Vysor 真心方便啊！连接后在画面顶部会有小小的工具栏，其中就有个截图的按钮，简直就是神器……</p>
+<h2 id="网络远程连接控制-给小伙伴共享你手机的控制权"><a href="#网络远程连接控制-给小伙伴共享你手机的控制权" class="headerlink" title="网络远程连接控制 / 给小伙伴共享你手机的控制权"></a>网络远程连接控制 / 给小伙伴共享你手机的控制权</h2><p>等等！我们都知道因为 Teamviewer QuickSupport 是通过网络连接的，因此可以实现「异地网络远程控制手机」，那么使用 USB 连接的 Vysor 能这样玩么？答案也是可以的！不过实现方式不太一样。</p>
+<p><strong>Vysor</strong>提供了名为 Vysor Share 的「网络远程控制共享」功能，准确来说应该是「共享手机的控制权」给网络上的他人远程进行操作。操作方法也很简单，通过 USB 连接成功后，在 Vysor 的手机列表上将会出现一个「Share」(分享) 按钮，点击后即可获得一个私密的 Vysor Share 链接。</p>
+<p><img src="http://imglf.nosdn.127.net/img/cU1NQXlBREt0dkdOQjEyZXp4bm41NGNnQXlIUWZ1SmZGTjJ6dXlhV3Nib1BXQXE5bC9uamN3PT0.jpg?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg5Yib5oSPIC8gamVmLXdheS5sb2Z0ZXIuY29t&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Vysor"></p>
+<p>你可以将这个 Vysor Share 链接通过 QQ 或邮件发给需要通过网络远程控制你手机的人（当然也可以是你自己啦），然后对方在电脑上 (同样需要安装好 Chrome 浏览器和 Vysor 扩展哦) 点击打开之后，就能开始对手机进行“网络远程”的控制了。</p>
+<p>不过由于我自己并没有这方面的需求，加上时间关系 (就是偷懒了 &gt;_&lt;)，所以这里没有实际测试过远程控制的效果如何，有试过的朋友不妨给大家说说。</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>目前 Vysor 还处于 Beta 测试阶段，从实际效果看来，画面帧速率还不是很高，快速操作时图像还是有延迟和模糊失真，但是一会就变回清晰了。而除了截图跟网络共享控制之外，其他附加功能也还不多。</p>
+<p>不过，尽管还不很完美，但 Vysor 实用性已经很值得一赞了！别忘了它还完全免费且跨平台哦！如果你一直在苦苦寻觅<strong>免 ROOT 权限的电脑远程控制手机的 APP</strong>，或者需要找一款将 Android 手机画面同步投射/串流到电脑的软件，又或者寻找手机截图利器，Vysor 正正就是你需要的！不得不说，它的本事让我印象深刻……</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><a href="http://www.vysor.io/" target="_blank" rel="noopener">官方网站</a><br><a href="http://pan.baidu.com/s/1kTq73Vp" target="_blank" rel="noopener">下载 Vysor 扩展</a><br><a href="http://pan.baidu.com/s/1dDfozi5" target="_blank" rel="noopener">下载 ADB 驱动 (Win)</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/11/26/D-Day-灾难来临，你的选择是什么/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            D-Day - 灾难来临，你的选择是什么
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2015/11/24/标你妹啊-UI设计师必备的自动标注工具/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">标你妹啊-UI设计师必备的自动标注工具</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

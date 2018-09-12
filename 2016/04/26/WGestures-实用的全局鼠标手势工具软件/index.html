@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>WGestures - 实用的全局鼠标手势工具软件 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="软件" />
+    
+    <meta name="description" content="说到「鼠标手势」大家应该都不会陌生，现在各种先进的浏览器上都自带了或者有相关功能的插件可以安装。它们能让你利用鼠标在屏幕上划出指定的线条来执行对应的动作，操作起来非常方便高效！ 当然，这么实用的功能怎能只让浏览器独享呢？今天就给大家介绍一款能为 Windows 整个系统都增加鼠标手势自定义的功能！它们都已经不能很好支持最新的 Windows 10 了。而今天推荐的 WGestures 则是一款全">
+<meta name="keywords" content="软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WGestures - 实用的全局鼠标手势工具软件">
+<meta property="og:url" content="http://jef-way.github.com/2016/04/26/WGestures-实用的全局鼠标手势工具软件/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="说到「鼠标手势」大家应该都不会陌生，现在各种先进的浏览器上都自带了或者有相关功能的插件可以安装。它们能让你利用鼠标在屏幕上划出指定的线条来执行对应的动作，操作起来非常方便高效！ 当然，这么实用的功能怎能只让浏览器独享呢？今天就给大家介绍一款能为 Windows 整个系统都增加鼠标手势自定义的功能！它们都已经不能很好支持最新的 Windows 10 了。而今天推荐的 WGestures 则是一款全">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPa1NRY05la1gzVHJSUnkzSjN6aE1HdzVqZlNQOXdPN0J3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:12:33.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WGestures - 实用的全局鼠标手势工具软件">
+<meta name="twitter:description" content="说到「鼠标手势」大家应该都不会陌生，现在各种先进的浏览器上都自带了或者有相关功能的插件可以安装。它们能让你利用鼠标在屏幕上划出指定的线条来执行对应的动作，操作起来非常方便高效！ 当然，这么实用的功能怎能只让浏览器独享呢？今天就给大家介绍一款能为 Windows 整个系统都增加鼠标手势自定义的功能！它们都已经不能很好支持最新的 Windows 10 了。而今天推荐的 WGestures 则是一款全">
+<meta name="twitter:image" content="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPa1NRY05la1gzVHJSUnkzSjN6aE1HdzVqZlNQOXdPN0J3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-WGestures-实用的全局鼠标手势工具软件" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        WGestures - 实用的全局鼠标手势工具软件
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/04/26/WGestures-实用的全局鼠标手势工具软件/" class="article-date">
+            <time datetime="2016-04-26T03:24:00.000Z" itemprop="datePublished">2016-04-26</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/软件/">软件</a>
+    </div>
+
+                阅读数量:<span id="/2016/04/26/WGestures-实用的全局鼠标手势工具软件/" class="leancloud_visitors" data-flag-title="WGestures - 实用的全局鼠标手势工具软件"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPa1NRY05la1gzVHJSUnkzSjN6aE1HdzVqZlNQOXdPN0J3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures - 实用的全局鼠标手势工具软件"></p>
+<p>说到「鼠标手势」大家应该都不会陌生，现在各种先进的浏览器上都自带了或者有相关功能的插件可以安装。它们能让你利用鼠标在屏幕上划出指定的线条来执行对应的动作，操作起来非常方便高效！</p>
+<p>当然，这么实用的功能怎能只让浏览器独享呢？今天就给大家介绍一款能为 Windows 整个系统都增加鼠标手势自定义的功能！它们都已经不能很好支持最新的 Windows 10 了。而今天推荐的 <strong>WGestures</strong> 则是一款全新且免费开源的系统全局鼠标手势软件神器……</p>
+<h2 id="WGestures-超级实用的免费全局鼠标手势软件新秀"><a href="#WGestures-超级实用的免费全局鼠标手势软件新秀" class="headerlink" title="WGestures 超级实用的免费全局鼠标手势软件新秀"></a>WGestures 超级实用的免费全局鼠标手势软件新秀</h2><p>WGestures 是一款免费且开源的国产软件，作为一个全局的鼠标手势软件，WGestures 可以作用于几乎所有的 Windows 程序！你可以设置手势来执行前进、后退、关闭窗口、最大化、最小化、复制、粘贴、执行命令代码、输出文本、打开网址、运行程序、执行快捷键等等实用的操作。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkRvNk84SXptU3VVbmtac05lN2JGQUlsMEI2aklrNDJZR21JNXRwVnF6czVRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<p>任何时候，只要你按住鼠标右键划出对应的手势，就能快速执行这些预设的功能。譬如，软件默认情况下，向上划线执行复制，向下粘贴，左下最小化，右上最大化，左下开始菜单，右下显示桌面等等，习惯了之后使用起来真心超级方便高效！</p>
+<p>相信当你再根据自己的使用情况加以设置调整之后，WGestures 足以让你大呼用得过瘾！</p>
+<h2 id="针对指定的软件设置鼠标手势："><a href="#针对指定的软件设置鼠标手势：" class="headerlink" title="针对指定的软件设置鼠标手势："></a>针对指定的软件设置鼠标手势：</h2><p>除了软件预设的一些全局手势之外，你也能添加自定义的手势，这些手势可以全局的，也可以是只针对某款软件。譬如你可以给 Google Chrome 浏览器增加强大的鼠标手势功能，而不必再安装它那些蹩脚又不好用的鼠标手势插件了。如下图按加号，然后按提示增加指定的程序：</p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPbUp6MURZUXVzS01ybHZuR2VkVkNvTmp5U2tDTTBGRmhnPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures 增加程序"></p>
+<p>当你想要利用 WGestures 的鼠标手势来执行软件的某个功能（如 Chrome 恢复刚关闭的网页），实现的办法就是先找到它的键盘快捷键，这里是 CTRL+SHIFT+T，然后你新增一个鼠标手势来执行这个快捷键即可。这样，无论是上一个标签页(CTRL+TAB)、下一个标签页(CTRL+SHIFT+TAB)、关闭标签页(CTRL+W)、新建隐身窗口(CTRL+SHIFT+N) 什么的各类功能都能轻松通过鼠标手势来完成了。完成设置之后，基本上浏览网站时都已经不需动键盘了，既惬意，效率又特别高！生活多么美好啊……</p>
+<h2 id="WGestures的常用手势"><a href="#WGestures的常用手势" class="headerlink" title="WGestures的常用手势"></a>WGestures的常用手势</h2><p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPaTFSTXZ4ejIyZVowWWNHWjBqakZUcWRPRW9hOTY2bW5BPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPa3BKZG9ka0hwNlF0SFEzbThmTUVOZlJFOUFvb2VubVl3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPcWNTbUduQk52eU5WamZiRWZjYW1YRzdyV2J6RlpPL3lRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<h2 id="WGestures屏幕触发角功能"><a href="#WGestures屏幕触发角功能" class="headerlink" title="WGestures屏幕触发角功能"></a>WGestures屏幕触发角功能</h2><p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPdDFtL21LdmQ0eUJPK0RTNE5mTDVIRzZ6L2lsWjVkMDFnPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<p>用过苹果 Mac 电脑的同学可能会知道，OS X 上有一个小功能，可以设置屏幕4个触发角的动作，譬如当鼠标指针移动到最右下角时可以触发「最小化」，移动到右上角的话触发「机器睡眠」等各种动作。WGestures 现在也为我们提供了这样的「触发角」功能，您只需将鼠标移到屏幕角落即可触发相应操作。而且您还可以自定义触发角的功能！</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>WGestures 的手势识别率高，稳定性也不错，支持 Windows 10、Win7/8 (兼容32与64位系统)，而且软件安装后自带了“快速入门”使用教程，即使新手也能很快上手。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFxbjdJRHBydXlPc0xGdlIzZmx4Z21wbStvR0RjbTh5amo4Q25iMTN2NTBRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="WGestures"></p>
+<p>有了 WGestures，你只需一只手操作鼠标，就能获得极高的操作效率，甚至有时比起记住各种快捷键的键盘操作还要方便！</p>
+<p>总的来说，WGestures 是追求高效工作的朋友必备的神器，你不应该错过它！但需要注意的是，如果你经常玩游戏的话，最好是先暂停手势功能，不然偶尔匹配出来的手势可能会对游戏有影响。</p>
+<h2 id="版本更新特性："><a href="#版本更新特性：" class="headerlink" title="版本更新特性："></a>版本更新特性：</h2><ul>
+<li>增加窗口置顶操作</li>
+<li>增加2个预设手势: 窗口置顶(↑→↑), 强制退出(↓←◐)</li>
+<li>“输出文本”改为“按键序列”, 比如 hello{enter}</li>
+<li>Cmd支持相关的环境变量 (WG_PROCID, WG_WINID等), Lua加入Context对象</li>
+<li>更新的快速入门</li>
+<li>优化轨迹显示效果</li>
+<li>修正使用默认浏览器搜索被360阻止问题</li>
+<li>修正win7显示Web搜索设置报错</li>
+<li>修正添加ModernApp识别错误问题</li>
+<li>修正1.7.1引入的多屏轨迹未显示Bug</li>
+<li>修正添加/编辑手势错误地提示“已存在”问题</li>
+</ul>
+<h2 id="相关文件下载地址"><a href="#相关文件下载地址" class="headerlink" title="相关文件下载地址"></a>相关文件下载地址</h2><blockquote>
+<p><a href="http://www.yingdev.com/projects/wgestures" target="_blank" rel="noopener">官方网站</a><br><a href="http://pan.baidu.com/s/1jIRLhCa" target="_blank" rel="noopener">下载 WGestures 鼠标手势软件</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/27/NexusFont-超实用的免费字体预览管理工具/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            NexusFont - 超实用的免费字体预览管理工具
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/04/25/OneNote-微软的优秀免费笔记软件/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">OneNote - 微软的优秀免费笔记软件</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

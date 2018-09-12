@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Wox - 开源免费强大的快捷启动器辅助工具 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="软件" />
+    
+    <meta name="description" content="在日常的电脑操作中，我们常常花很多时间重复做着一件事情：退回桌面/开始菜单-&amp;gt;寻找软件图标-&amp;gt;点击启动。但如果你喜欢高效的键盘操作，那么你需要一款好用的 快速启动器软件。 我们曾介绍过 Launchy、AltRun、Executor、Alfred 等键盘快速启动工具，而今天推荐的则是另外一款国产开源免费的软件快捷启动工具 Wox！它可以搜索你电脑上的程序，通过快捷键呼出搜索框，输入少">
+<meta name="keywords" content="软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wox - 开源免费强大的快捷启动器辅助工具">
+<meta property="og:url" content="http://jef-way.github.com/2015/11/21/Wox-开源免费强大的快捷启动器辅助工具/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="在日常的电脑操作中，我们常常花很多时间重复做着一件事情：退回桌面/开始菜单-&amp;gt;寻找软件图标-&amp;gt;点击启动。但如果你喜欢高效的键盘操作，那么你需要一款好用的 快速启动器软件。 我们曾介绍过 Launchy、AltRun、Executor、Alfred 等键盘快速启动工具，而今天推荐的则是另外一款国产开源免费的软件快捷启动工具 Wox！它可以搜索你电脑上的程序，通过快捷键呼出搜索框，输入少">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtnak83a2d0bkZJSFgxV01UWHRmd2poR0tlRERNOGY2dVp3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:44:35.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wox - 开源免费强大的快捷启动器辅助工具">
+<meta name="twitter:description" content="在日常的电脑操作中，我们常常花很多时间重复做着一件事情：退回桌面/开始菜单-&amp;gt;寻找软件图标-&amp;gt;点击启动。但如果你喜欢高效的键盘操作，那么你需要一款好用的 快速启动器软件。 我们曾介绍过 Launchy、AltRun、Executor、Alfred 等键盘快速启动工具，而今天推荐的则是另外一款国产开源免费的软件快捷启动工具 Wox！它可以搜索你电脑上的程序，通过快捷键呼出搜索框，输入少">
+<meta name="twitter:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtnak83a2d0bkZJSFgxV01UWHRmd2poR0tlRERNOGY2dVp3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Wox-开源免费强大的快捷启动器辅助工具" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Wox - 开源免费强大的快捷启动器辅助工具
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2015/11/21/Wox-开源免费强大的快捷启动器辅助工具/" class="article-date">
+            <time datetime="2015-11-21T06:06:00.000Z" itemprop="datePublished">2015-11-21</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/软件/">软件</a>
+    </div>
+
+                阅读数量:<span id="/2015/11/21/Wox-开源免费强大的快捷启动器辅助工具/" class="leancloud_visitors" data-flag-title="Wox - 开源免费强大的快捷启动器辅助工具"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtnak83a2d0bkZJSFgxV01UWHRmd2poR0tlRERNOGY2dVp3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Wox - 开源免费强大的快捷启动器辅助工具"></p>
+<p>在日常的电脑操作中，我们常常花很多时间重复做着一件事情：退回桌面/开始菜单-&gt;寻找软件图标-&gt;点击启动。但如果你喜欢高效的键盘操作，那么你需要一款好用的 <strong>快速启动器软件</strong>。</p>
+<p>我们曾介绍过 Launchy、AltRun、Executor、Alfred 等键盘快速启动工具，而今天推荐的则是另外一款国产开源免费的软件快捷启动工具 Wox！它可以搜索你电脑上的程序，通过快捷键呼出搜索框，输入少量字母快速匹配出对应软件并启动、打开网页、翻译单词、或配合 Everything 插件搜索任意文件等等……</p>
+<h2 id="Wox-强大高效的快捷启动软件"><a href="#Wox-强大高效的快捷启动软件" class="headerlink" title="Wox - 强大高效的快捷启动软件"></a>Wox - 强大高效的快捷启动软件</h2><p>你可以将 <strong>Wox</strong> 看作一个高效的本地快速搜索框，通过快捷键呼出，然后输入关键字来搜索程序进行快速启动，或者搜索本地硬盘的文件，打开百度、Google 进行搜索，甚至是通过一些插件的功能实现单词翻译、关闭屏幕、查询剪贴板历史、查询编程文档、查询天气等更多功能。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGdHBVclpxU3NrM1ZDMkdNUXQ5eTZkNTNPeWgrQTMvYTZnPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<p>相比 Launchy 等同类的快速启动器工具，Wox 最大的特点是可以支持中文拼音的模糊匹配。譬如说你想搜索“设备管理器”，那么只需输入&quot;sheb&quot;就能匹配得到。</p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGcFdLcEZ3OC82dXFSUzAyTE9Fd3JNcVBMa21yUDFoTEN3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<h2 id="增加程序的搜索目录："><a href="#增加程序的搜索目录：" class="headerlink" title="增加程序的搜索目录："></a>增加程序的搜索目录：</h2><p>一开始使用 Wox 时，你会发现，除了开始菜单里面有的程序能搜索到之外，自己的一些绿色软件或者安装到非默认目录的软件都找不到。这时你可以在 Wox 里输入 settings 回车或托盘图标右键选择 Settings 进入设置界面，然后在 Programs 中按 Add 按钮添加你的软件所在的文件夹。</p>
+<p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGc21ITENDY3RSZkRuekgxSDQ3WWZNWUJwcUlyeHlxd21RPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<p>如下图，Type 一般选择 Portable 开头的那项，然后在 Location 里输入目录路径，BounsPoint 是优先级，默认填0即可。设置后退出并重启 Wox 即可生效。</p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGckhzcTFybGVvQk5pODg1dWdpNm5KZWF3NENFWnZrMDB3PT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<h2 id="网页搜索功能："><a href="#网页搜索功能：" class="headerlink" title="网页搜索功能："></a>网页搜索功能：</h2><p>Wox 的网页搜索功能是可以让用户自己为某个搜索引擎设置一个关键字。举个简单例子，如果用户经常使用百度搜索。那么用户就可以在 Wox 的设置里的 Web Search 选项中，点击 Add 增加这么一个选项（URL为<a href="http://www.baidu.com/s?wd={q}）：" target="_blank" rel="noopener">http://www.baidu.com/s?wd={q}）：</a></p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGbnZBTjFydjZKSHBDckFGK0xXd1l1Rlp6YWt2TUxNREtnPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<p>这样，你便可以通过在 Wox 搜索框里输入「bd 关键字」进行百度搜索。同理，你也可以增一个淘宝搜索、必应搜索，或者任何其他你所需要打开的网站，网址中的{q}是代表你输入的关键字，发挥你的想象力吧。</p>
+<h2 id="插件管理："><a href="#插件管理：" class="headerlink" title="插件管理："></a>插件管理：</h2><p>同样是在 <strong>Wox</strong> 里键入 settings 并回车进入设置界面，Plugins 一页中便是你目前安装的插件。你可以在这里启用/禁用或者设置你的插件。你可以在这里找到 Wox 的插件下载，下载回来的是 .wox 格式的文件，直接拖放到 Wox 的搜索框上，软件就会提示你是否安装了。</p>
+<h3 id="Everything-搜索插件："><a href="#Everything-搜索插件：" class="headerlink" title="Everything 搜索插件："></a>Everything 搜索插件：</h3><p>Everything 无疑是目前最强大的文件秒搜工具了，因此在 Wox 上集成 Everything 的功能一定会让它变得更酷更实用！但是，直接安装完 Everything 的插件你会发现通过它的命令「ev 文件名」并不能搜索。这时，你还需要进入插件的目录中，将 x64 或 x86 文件夹里面的 Everything.dll 复制一个到上层目录，重启 Wox 才能生效。</p>
+<h3 id="更多插件："><a href="#更多插件：" class="headerlink" title="更多插件："></a>更多插件：</h3><p>目前 Wox 已经有不少实用的插件了，如豆瓣电影、雅虎天气、进程关闭器、URL编码、关闭显示器、剪贴板历史、Windows最近使用文档等等……更多的 Wox 插件下载以及它们使用方式，大家可以<a href="http://www.getwox.com/plugin" target="_blank" rel="noopener">前往这里获取</a>，限于篇幅这里就不介绍更多了，大家亲身去尝试吧。</p>
+<p>另外，官方的介绍上表示可以通过输入「wpm install 插件名」命令进行插件安装，但我这边实测时不知为何并无此命令的存在，可能在新版本会修正这个问题吧。</p>
+<h2 id="其他功能："><a href="#其他功能：" class="headerlink" title="其他功能："></a>其他功能：</h2><h3 id="运行命令行-替换Win-R："><a href="#运行命令行-替换Win-R：" class="headerlink" title="运行命令行/替换Win+R："></a>运行命令行/替换Win+R：</h3><p>Wox 还提供了 Win+R 替换运行窗口的功能（可在设置中关闭），也提供了快速输入命令行的功能。也就说在打开Wox的情况下，如果用户按下 Win+R 将会直接打开Wox并进入命令行状态（用户也可以通过输入&gt;直接进入此状态），如下图，键「 &gt;ping <a href="http://www.jefway.com」可以快速执行" target="_blank" rel="noopener">www.jefway.com」可以快速执行</a> ping 命令。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGbFdObmtvVEJRRVhMaXFodFg1T3NDaWo4OStZNmYvQzhnPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<h3 id="快速计算器："><a href="#快速计算器：" class="headerlink" title="快速计算器："></a>快速计算器：</h3><p>Wox 还能进行一些简单的数学运算，可以非常方便地随手进行计算，并且回车后还可以复制计算结果。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGaERlWHlheEFtWkY4d2xTamIydmNaMCtreTh5Q0lQc3FRPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<h2 id="自定义主题外观："><a href="#自定义主题外观：" class="headerlink" title="自定义主题外观："></a>自定义主题外观：</h2><p>除了插件外，Wox 还支持自定义主题外观。你可以在设置界面中的 Theme 页面中选择已有的主题，也可以通过这个在线的主题制作工具自行定制。</p>
+<p><img src="http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkE2K3ppaFpqNTZGb1FBK2JTdGUyMEtmNmlydWtvUEQ3ZnZZaG9CTmJKYW5BPT0.png?imageView&amp;thumbnail=500x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg%7Cwatermark&amp;type=2&amp;text=wqkg6KeJ5b6uIC8gamVmd2F5LmxvZnRlci5jb20=&amp;font=bXN5aA==&amp;gravity=southwest&amp;dissolve=30&amp;fontsize=240&amp;dx=8&amp;dy=10&amp;stripmeta=0" alt="Wox "></p>
+<h2 id="总结-Wox-的一些特性："><a href="#总结-Wox-的一些特性：" class="headerlink" title="总结 Wox 的一些特性："></a>总结 Wox 的一些特性：</h2><ul>
+<li>可以搜索本机安装的程序，支持中文拼音模糊搜索</li>
+<li>搜索浏览器书签</li>
+<li>瞬间搜索出本地硬盘所有文件（通过 Everything 插件）</li>
+<li>网页搜索功能，可以给某个网址设置关键字例如搜索google，可以用g 搜索内容</li>
+<li>支持插件扩展</li>
+<li>支持自定义主题</li>
+</ul>
+<h2 id="写在后面："><a href="#写在后面：" class="headerlink" title="写在后面："></a>写在后面：</h2><p>虽然 Wox 推出的时间并不长，目前还不算很稳定(偶尔出错)，但由于其开源且支持插件扩展，整体思路优秀，个人认为它的潜力非常巨大。由于它借鉴了 Mac 上的效率神器 Alfred 高效的工作方式，有点 <strong>Alfred Windows 版</strong> 的味道。假以时日，一旦插件丰富起来、稳定性提高之后，Wox 也将会成为 Windows 上的最佳效率神器。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><a href="http://www.getwox.com/" target="_blank" rel="noopener">官方网站</a><br><a href="http://pan.baidu.com/s/1sjw09kx" target="_blank" rel="noopener">下载 Wox 快捷启动器</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/11/23/Inputting-Android-上的「Ctrl-Z」/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Inputting+ - Android 上的「Ctrl+Z」
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2015/11/20/Ice-Box-把耗电应用都冻起来/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Ice Box - 把耗电应用都冻起来</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

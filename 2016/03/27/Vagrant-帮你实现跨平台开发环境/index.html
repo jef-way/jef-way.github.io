@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Vagrant - 帮你实现跨平台开发环境 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="开发" />
+    
+    <meta name="description" content="做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。 Windows下玩Linux少不了虚拟机，但装系统依旧是相当费事。在现在什么都">
+<meta name="keywords" content="开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vagrant - 帮你实现跨平台开发环境">
+<meta property="og:url" content="http://jef-way.github.com/2016/03/27/Vagrant-帮你实现跨平台开发环境/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。 Windows下玩Linux少不了虚拟机，但装系统依旧是相当费事。在现在什么都">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRoWFdwejNiZzhKdUEwUUNWaXE1bGFXR1c5dHpOemI1cjV3enloaDgremh3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:36:30.597Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vagrant - 帮你实现跨平台开发环境">
+<meta name="twitter:description" content="做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。 Windows下玩Linux少不了虚拟机，但装系统依旧是相当费事。在现在什么都">
+<meta name="twitter:image" content="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRoWFdwejNiZzhKdUEwUUNWaXE1bGFXR1c5dHpOemI1cjV3enloaDgremh3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/前端/">前端</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Vagrant-帮你实现跨平台开发环境" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Vagrant - 帮你实现跨平台开发环境
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/03/27/Vagrant-帮你实现跨平台开发环境/" class="article-date">
+            <time datetime="2016-03-27T06:31:00.000Z" itemprop="datePublished">2016-03-27</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/开发/">开发</a>
+    </div>
+
+                阅读数量:<span id="/2016/03/27/Vagrant-帮你实现跨平台开发环境/" class="leancloud_visitors" data-flag-title="Vagrant - 帮你实现跨平台开发环境"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRoWFdwejNiZzhKdUEwUUNWaXE1bGFXR1c5dHpOemI1cjV3enloaDgremh3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Vagrant - 帮你实现跨平台开发环境"></p>
+<p>做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。</p>
+<p>Windows下玩Linux少不了虚拟机，但装系统依旧是相当费事。在现在什么都在自动化的今天，Vagrant就是这么一个神器，基于Ruby开发，使用开源 VirtualBox 作为虚拟化支持，可以轻松的跨平台部署。</p>
+<p>今天试着把几台机器的环境都换成Vagrant，很爽很顺畅，于是就试着整理了一下使用小结：</p>
+<h2 id="Vagrant-是个什么东东啊？"><a href="#Vagrant-是个什么东东啊？" class="headerlink" title="Vagrant 是个什么东东啊？"></a>Vagrant 是个什么东东啊？</h2><p>Vagrant 是一款用来构建虚拟开发环境的工具，非常适合 php/python/ruby/java 这类语言开发 web 应用，“代码在我机子上运行没有问题”这种说辞将成为历史。</p>
+<p>我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行，非常霸气。</p>
+<h2 id="安装-Vagrant-的准备工作"><a href="#安装-Vagrant-的准备工作" class="headerlink" title="安装 Vagrant 的准备工作"></a>安装 Vagrant 的准备工作</h2><p>下载安装 VirtualBox ：<a href="https://www.virtualbox.org/" target="_blank" rel="noopener">https://www.virtualbox.org/</a></p>
+<p>下载安装 Vagrant ：<a href="http://www.vagrantup.com/" target="_blank" rel="noopener">http://www.vagrantup.com/</a></p>
+<p>下载需要使用的 box ：</p>
+<p>官方提供的范例：<a href="http://files.vagrantup.com/precise32.box" target="_blank" rel="noopener">http://files.vagrantup.com/precise32.box</a></p>
+<p>还可以在 <a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a> 这里下载更多不同系统甚至是已经配置好环境直接可以用的box，虽然可以直接在Vagrant直接使用网址，由Vagrant自动下载安装，但是考虑到网络情况，还是建议自行先下载好。</p>
+<p>由于习惯用CentOS，于是我就下了CentOS 6.3 x86_64 minimal，这个Box根据个人情况进行选择即可。</p>
+<h2 id="Vagrant-环境设置"><a href="#Vagrant-环境设置" class="headerlink" title="Vagrant 环境设置"></a>Vagrant 环境设置</h2><h3 id="添加镜像到-Vagrant"><a href="#添加镜像到-Vagrant" class="headerlink" title="添加镜像到 Vagrant"></a>添加镜像到 Vagrant</h3><p>假设我们下载的镜像存放路径是 <code>E:/box/precise64.box</code>，在终端里输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add base CentOS-6.3-x86_64-minimal.box</span><br></pre></td></tr></table></figure>
+<p><code>base</code> 是我们给这个 box 命的名字，<code>E:/box/precise64.box</code> 是 box 所在路径</p>
+<h3 id="初始化-Vagrant-开发环境"><a href="#初始化-Vagrant-开发环境" class="headerlink" title="初始化 Vagrant 开发环境"></a>初始化 Vagrant 开发环境</h3><p>创建一个开发目录（比如：<code>E:/dev</code>），你也可以使用已有的目录，切换到开发目录里，用 <code>base</code> 镜像初始化当前目录的环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> E:/dev  <span class="comment"># 切换目录</span></span><br><span class="line">$ vagrant init base  <span class="comment"># 初始化</span></span><br><span class="line">$ vagrant up  <span class="comment"># 启动环境</span></span><br></pre></td></tr></table></figure>
+<p>你会看到终端显示了启动过程，启动完成后，我们就可以用 SSH 登录虚拟机了，剩下的步骤就是在虚拟机里配置你要运行的各种环境和参数了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh  <span class="comment"># SSH 登录</span></span><br><span class="line">$ <span class="built_in">cd</span> /vagrant  <span class="comment"># 切换到开发目录，也就是宿主机上的 `E:/dev`</span></span><br></pre></td></tr></table></figure>
+<p><code>E:/dev</code> 目录对应虚拟机中的目录是 <code>/vagrant</code></p>
+<p><strong>Windows 用户注意：</strong>Windows 终端并不支持 ssh，所以需要安装第三方 SSH 客户端，比如：Putty、Cygwin 等。</p>
+<h2 id="Vagrant-其他设置"><a href="#Vagrant-其他设置" class="headerlink" title="Vagrant 其他设置"></a>Vagrant 其他设置</h2><p>Vagrant 初始化成功后，会在初始化的目录里生成一个 <code>Vagrantfile</code> 的配置文件，可以修改配置文件进行个性化的定制。</p>
+<p>Vagrant 默认是使用端口映射方式将虚拟机的端口映射本地从而实现类似 <code>http://localhost:80</code> 这种访问方式，这种方式比较麻烦，新开和修改端口的时候都得编辑。相比较而言，host-only 模式显得方便多了。打开 <code>Vagrantfile</code>，将下面这行的注释去掉（移除 <code>#</code>）并保存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: <span class="string">"192.168.33.10"</span></span><br></pre></td></tr></table></figure>
+<p>重启虚拟机，这样我们就能用 <code>192.168.33.10</code> 访问这台机器了，你可以把 IP 改成其他地址，只要不产生冲突就行。</p>
+<h3 id="Vagrant-网络配置的三种模式"><a href="#Vagrant-网络配置的三种模式" class="headerlink" title="Vagrant 网络配置的三种模式"></a>Vagrant 网络配置的三种模式</h3><p>1、较为常用是端口映射，就是将虚拟机中的端口映射到宿主机对应的端口直接使用 ，在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :forwarded_port, guest: 80, host: 8080</span><br></pre></td></tr></table></figure>
+<p><code>guest: 80</code> 表示虚拟机中的80端口， <code>host: 8080</code> 表示映射到宿主机的8080端口。</p>
+<p>2、如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机，可以使用private_network，并为虚拟机设置IP ，在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: <span class="string">"192.168.1.104"</span></span><br></pre></td></tr></table></figure>
+<p><code>192.168.1.104</code> 表示虚拟机的IP，多台虚拟机的话需要互相访问的话，设置在相同网段即可</p>
+<p>3、如果需要将虚拟机作为当前局域网中的一台计算机，由局域网进行<code>DHCP</code>，那么在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :public_network</span><br></pre></td></tr></table></figure>
+<h3 id="Vagrant-目录映射"><a href="#Vagrant-目录映射" class="headerlink" title="Vagrant 目录映射"></a>Vagrant 目录映射</h3><p>既然是开发环境，那么开发工作肯定还是需要在本地完成，而不是都要进到虚拟机中去完成，虚拟机就好好在后台运行服务就好了，不然就本末倒置了，所以这里就需要使用目录映射功能，将本地的目录映射到虚拟机的对应目录。</p>
+<p>默认情况下，当前的工作目录，会被映射到虚拟机的 <code>/vagrant</code> 目录，当前目录下的文件可以直接在 <code>/vagrant</code> 下进行访问，当然也可以在通过 <code>ln</code> 创建软连接，如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -fs /vagrant/wwwroot /var/www</span><br></pre></td></tr></table></figure>
+<p>来进行目录映射，当然，从自动化配置的角度，能不进系统就不需要进系统，所以在Vagrant也可以进行目录映射的操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.synced_folder <span class="string">"wwwroot/"</span>, <span class="string">"/var/www"</span></span><br></pre></td></tr></table></figure>
+<p>前面的参数 “<code>wwwroot/</code>”  表示的是本地的路径，这里使用对于工作目录的相对路径，这里也可以使用绝对路径，比如： “<code>E:/www/</code>”</p>
+<p>后面的参数 “<code>/var/www</code>” 表示虚拟机中对应映射的目录。</p>
+<h2 id="Vagrant-打包分发"><a href="#Vagrant-打包分发" class="headerlink" title="Vagrant 打包分发"></a>Vagrant 打包分发</h2><p>当你配置好开发环境后，退出并关闭虚拟机。在终端里对开发环境进行打包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant package</span><br></pre></td></tr></table></figure>
+<p>打包完成后会在当前目录生成一个 <code>package.box</code> 的文件，将这个文件传给其他用户，其他用户只要添加这个 box 并用其初始化自己的开发目录就能得到一个一模一样的开发环境了。</p>
+<h2 id="Vagrant-常用命令"><a href="#Vagrant-常用命令" class="headerlink" title="Vagrant 常用命令"></a>Vagrant 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant init  <span class="comment"># 初始化</span></span><br><span class="line">$ vagrant up  <span class="comment"># 启动虚拟机</span></span><br><span class="line">$ vagrant halt  <span class="comment"># 关闭虚拟机</span></span><br><span class="line">$ vagrant reload  <span class="comment"># 重启虚拟机</span></span><br><span class="line">$ vagrant ssh  <span class="comment"># SSH 至虚拟机</span></span><br><span class="line">$ vagrant status  <span class="comment"># 查看虚拟机运行状态</span></span><br><span class="line">$ vagrant destroy  <span class="comment"># 销毁当前虚拟机</span></span><br></pre></td></tr></table></figure>
+<h2 id="Vagrant-的一些注意事项"><a href="#Vagrant-的一些注意事项" class="headerlink" title="Vagrant 的一些注意事项"></a>Vagrant 的一些注意事项</h2><p>使用 <code>Apache/Nginx</code> 时会出现诸如图片修改后但页面刷新仍然是旧文件的情况，是由于静态文件缓存造成的。需要对虚拟机里的 <code>Apache/Nginx</code> 配置文件进行修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apache 配置添加:</span></span><br><span class="line">EnableSendfile off</span><br><span class="line"></span><br><span class="line"><span class="comment"># Nginx 配置添加:</span></span><br><span class="line">sendfile off;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/03/28/创意动画-火柴人对战创世神/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            创意动画 - 火柴人对战创世神
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/03/26/鼠来宝系列-萌宠大明星唱歌其实挺好听/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">鼠来宝系列 - 萌宠大明星唱歌其实挺好听</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

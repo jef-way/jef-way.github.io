@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Vimium - 让你体验Geek般的浏览体验 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="插件" />
+    
+    <meta name="description" content="相信很多电脑高手们都会寻找一一些快捷高效的操作方式，如经常利用键盘的快速操作，让你脱离鼠标，可以让你不用花太多精力地去移动细小的指针进行操作，使得工作的效率提高许多。 不过，实际上很多时候我们还是不得不用鼠标来操作，尤其是在浏览网页时，没有鼠标很多事情基本上没法做。但是！作为一个键盘党怎么可以容忍这种事情发生呢！今天给大家介绍的 Vimium 就是为解决这个问题而生的，它能让你只用键盘就能高效快">
+<meta name="keywords" content="插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vimium - 让你体验Geek般的浏览体验">
+<meta property="og:url" content="http://jef-way.github.com/2016/03/24/Vimium-让你体验Geek般的浏览体验/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="相信很多电脑高手们都会寻找一一些快捷高效的操作方式，如经常利用键盘的快速操作，让你脱离鼠标，可以让你不用花太多精力地去移动细小的指针进行操作，使得工作的效率提高许多。 不过，实际上很多时候我们还是不得不用鼠标来操作，尤其是在浏览网页时，没有鼠标很多事情基本上没法做。但是！作为一个键盘党怎么可以容忍这种事情发生呢！今天给大家介绍的 Vimium 就是为解决这个问题而生的，它能让你只用键盘就能高效快">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lQU5taFFUZEFqSjZmQXhySU44UWxsNW9qL3Z1aVI0dGlRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:46:03.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vimium - 让你体验Geek般的浏览体验">
+<meta name="twitter:description" content="相信很多电脑高手们都会寻找一一些快捷高效的操作方式，如经常利用键盘的快速操作，让你脱离鼠标，可以让你不用花太多精力地去移动细小的指针进行操作，使得工作的效率提高许多。 不过，实际上很多时候我们还是不得不用鼠标来操作，尤其是在浏览网页时，没有鼠标很多事情基本上没法做。但是！作为一个键盘党怎么可以容忍这种事情发生呢！今天给大家介绍的 Vimium 就是为解决这个问题而生的，它能让你只用键盘就能高效快">
+<meta name="twitter:image" content="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lQU5taFFUZEFqSjZmQXhySU44UWxsNW9qL3Z1aVI0dGlRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Vimium-让你体验Geek般的浏览体验" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Vimium - 让你体验Geek般的浏览体验
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2016/03/24/Vimium-让你体验Geek般的浏览体验/" class="article-date">
+            <time datetime="2016-03-24T08:47:56.000Z" itemprop="datePublished">2016-03-24</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/插件/">插件</a>
+    </div>
+
+                阅读数量:<span id="/2016/03/24/Vimium-让你体验Geek般的浏览体验/" class="leancloud_visitors" data-flag-title="Vimium - 让你体验Geek般的浏览体验"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lQU5taFFUZEFqSjZmQXhySU44UWxsNW9qL3Z1aVI0dGlRPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Vimium - 让你体验Geek般的浏览体验"></p>
+<p>相信很多电脑高手们都会寻找一一些快捷高效的操作方式，如经常利用键盘的快速操作，让你脱离鼠标，可以让你不用花太多精力地去移动细小的指针进行操作，使得工作的效率提高许多。</p>
+<p>不过，实际上很多时候我们还是不得不用鼠标来操作，尤其是在浏览网页时，没有鼠标很多事情基本上没法做。但是！作为一个键盘党怎么可以容忍这种事情发生呢！今天给大家介绍的 <strong>Vimium</strong> 就是为解决这个问题而生的，它能让你只用键盘就能高效快速便捷地上网，这才是高手们应该有的境界～嗯，软件也是应该要这么玩才有意思……</p>
+<h2 id="关于-Vimium-的由来"><a href="#关于-Vimium-的由来" class="headerlink" title="关于 Vimium 的由来"></a>关于 Vimium 的由来</h2><p><strong>Vimium</strong> 这个名字其实是 Vim 和 Chromium 的合体；很多人可能还不知道 Vim，这样告诉你，你是不是经常在电影里看到那些顶尖的黑客，他们在屏幕上来去自如，最关键的是，他们竟然都不用鼠标？没错，狭义地说，Vim 其实是 Linux 等平台上的一款文本编辑器，它可以让你彻底脱离鼠标，通过一系列快捷键，来操作任何一件事情。</p>
+<p>而 Vimium 则继承了 Vim 中的常用键位，让你在使用 Chrome 的过程中，无论是浏览网页、切换标签或是其它任何操作，全都可以只通过键盘完成。想像一下，你再也不需要移动鼠标去打开一个链接，手指不用离开键盘，一切都是这么流畅。</p>
+<h2 id="Vimium-的操作方式介绍"><a href="#Vimium-的操作方式介绍" class="headerlink" title="Vimium 的操作方式介绍"></a>Vimium 的操作方式介绍</h2><p>听了前面这么一段介绍，你可能还在云里雾里，感觉这不是一个好上手的东西；咱们换一种方式来说，Vimium 实际上可以理解成是一系列快捷键配置，你可以通过这些快捷键来完成对应的操作，比如，Chrome 其实自带的快捷键就有：<code>Ctrl + T</code>可以新建标签页，<code>Ctrl + N</code> 可以新建窗口等等,而 Vimium 比这简单得多，却又强大得多。</p>
+<p>这里是一张 Vimium 的快捷键列表(通过 <code>Shift + /</code> 来查看帮助)：</p>
+<p><img src="http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lTnB3cjZCZVVzNXZnMnlmMVR0RzI5djhrTkRLVWpQMndBPT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Vimium 的快捷键列表"></p>
+<p>别怕，虽然看着多，但常用的不多，而且使用几次后很容易上手，下面就带大家来过几个最实用的。</p>
+<h2 id="Vimium-常用的按键功能解释："><a href="#Vimium-常用的按键功能解释：" class="headerlink" title="Vimium 常用的按键功能解释："></a>Vimium 常用的按键功能解释：</h2><ul>
+<li><code>j</code>：向下细微滚动窗口   <code>k</code>：向上细微滚动窗口</li>
+<li><code>J</code>：(Shift+j的意思，以下大写全部表示加Shift) 下一个标签页  <code>K</code>：上一个标签页</li>
+<li><code>d</code>：向下滚动半个屏幕   <code>u</code>：向上移动半个屏幕</li>
+<li><code>g+g</code>（连续按两下g）：回到顶部</li>
+<li><code>G</code>：到达页面底部</li>
+<li><code>H</code>：后退   <code>L</code>： 前进</li>
+<li><code>f</code>：将当前网页上的所有可见链接/输入框分配一个快捷键，输入后就可以打开或者跳转到对应的输入框。如果按的是F，那么将在新窗口中打开页面（见上图）</li>
+<li><code>g+i</code>：将光标 定位到输入框，如果有多个可以按Tab键切换</li>
+<li><code>x</code>：关闭当前页面   X：恢复刚刚关闭的页面</li>
+<li><code>o</code>：相当于Chrome中的地址栏，可以匹配历史记录、收藏夹并在当前窗口打开，或者直接打开一个网址或者搜索一个关键字（Chrome在全屏的时候地址栏死都出不来，有了它就解决这个一直困扰我的问题了！～），如果按的是O，则可以在新窗口中打开，非常非常方便！</li>
+<li><code>g+s</code>：查看网页的源代码</li>
+<li><code>r</code>：重新载入当前网页（顺便提一句，这点上新浪微博和它是一样的，光标没有定位在发送框时，即便没有安装这个插件你也可以用j/k来控制页面上下滚动，用r在刷新，用f或者p来定位到发送框。而Gmail的快捷键如j,k上下移动光标也是类似，有兴趣大家可以再自己去了解一下一些常用web应用的快捷键）</li>
+</ul>
+<h2 id="Vimium-常见的几种实际操作"><a href="#Vimium-常见的几种实际操作" class="headerlink" title="Vimium 常见的几种实际操作"></a>Vimium 常见的几种实际操作</h2><h3 id="用-Vimium-打开新页面"><a href="#用-Vimium-打开新页面" class="headerlink" title="用 Vimium 打开新页面"></a>用 Vimium 打开新页面</h3><p><strong>复制一段链接：</strong>经常在网页上看到一段链接文字，但却是不可点的;原来你需要先复制，然后新建标签页，再粘贴，敲回车后才能打开。现在呢？你只需要把要打开的链接复制一下，直接按<code>p</code>或<code>P</code>就可以打开了，小写的 p 是在当前标签页打开，大写的 P 则新建标签页打开。</p>
+<p><strong>从收藏夹、历史记录打开：</strong>是不是之前看过什么网页，现在又想看了，还需要再打开历史记录找？或者想打开收藏夹里的某个链接？现在，直接按下<code>o</code>，输入对应的关键字后，会一起搜索你的历史记录和收藏夹，如果你输的是一个网址，回车还能直接打开。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lTksyZE9Cd3NDT3hjZTZSZERTdzdsMDdFNjlteCtzOXB3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="历史纪录"></p>
+<h3 id="用-Vimium-快速打开当前页面上任意一个链接"><a href="#用-Vimium-快速打开当前页面上任意一个链接" class="headerlink" title="用 Vimium 快速打开当前页面上任意一个链接"></a>用 Vimium 快速打开当前页面上任意一个链接</h3><p>用 Vimium 在任意一个页面上，无论用多少链接，你根本不用鼠标，最多只需要敲三个键，你就可以迅速打开任意一个链接，你信吗？Vimium 就可以办到。</p>
+<p>你只需要按一下<code>f</code>，然后当前页面上所有可点击的元素，都会生成一个对应的快捷键分派给这些链接,比如我现在想点击导航栏上的「软件聚合」，只需要再输入「C」，OK！完成了，你只敲了三个键，就打开了「软件聚合」页面。</p>
+<p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lRmRadVEwb2d5QVpKME5qUURQVEI1ZStCL0lVeEtKRVdBPT0.png?imageView&amp;thumbnail=1905y887&amp;type=jpg&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="快速打开链接"></p>
+<h3 id="快速显示当前所有的标签页，并快速切换"><a href="#快速显示当前所有的标签页，并快速切换" class="headerlink" title="快速显示当前所有的标签页，并快速切换"></a>快速显示当前所有的标签页，并快速切换</h3><p>有时候在查找信息、翻阅资料时，经常会一口气打开几十个网站，东西一多，Chrome 会自动将每个标签页的宽度缩小，几乎就看不到它们的标题了。用了 Vimium，你可以按一下大写的<code>T</code>，就可以显示当前打开的所有标签页，并支持快捷搜索和跳转。</p>
+<p><img src="http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkNOMktVZmttR21lUGFIT0J5emxFKzE2ZXRIVTJDWS9lOHQrMnEzZVJtMUd3PT0.png?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="快速切换标签页"></p>
+<p>实际上 Vimium 还有许多非常酷的功能，比如你可以一键在不同的 Tab 之间切换等等，这里只是抛砖引玉，给大家介绍几个，更多的大家可以根据自己的需要去探索，如果你觉得文字不够生动，看了上面的介绍有些还没有完全理解，这里有一则官方的介绍小视频，大家有兴趣也可以看看。</p>
+<iframe height="480" width="100%" src="http://player.youku.com/embed/XMTUxMDY4MTAzNg" frameborder="0" allowfullscreen></iframe>
+<h2 id="Vimium谷歌浏览器插件下载"><a href="#Vimium谷歌浏览器插件下载" class="headerlink" title="Vimium谷歌浏览器插件下载"></a>Vimium谷歌浏览器插件下载</h2><blockquote>
+<p><a href="http://pan.baidu.com/s/1bnZ3Nx9" target="_blank" rel="noopener">Vimium插件下载</a></p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/03/25/迪士尼动漫-那些值得一看的动漫电影/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            迪士尼动漫 - 那些值得一看的动漫电影
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/03/22/Iconfont-让字体图标更自由/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Iconfont - 让字体图标更自由</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

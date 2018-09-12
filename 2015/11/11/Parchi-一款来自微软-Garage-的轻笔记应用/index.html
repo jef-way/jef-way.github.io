@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Parchi-一款来自微软 Garage 的轻笔记应用 | 觉微创意</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="APP" />
+    
+    <meta name="description" content="在这之前，Microsoft Garage（微软车库）已经出过几款 Android 应用，像 Next Lock Screen 和 Picturesque Lock Screen 等。这些据说是微软员工在业余时间做的应用，正常使用倒没啥问题，但总觉得有些欠打磨。那这次出的便签应用 Parchi 到底如何，我们一起来看一看。 可能是觉得叫什么 XX Note 不免落俗，便取了这个稀奇古怪的，教人不">
+<meta name="keywords" content="APP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parchi-一款来自微软 Garage 的轻笔记应用">
+<meta property="og:url" content="http://jef-way.github.com/2015/11/11/Parchi-一款来自微软-Garage-的轻笔记应用/index.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="在这之前，Microsoft Garage（微软车库）已经出过几款 Android 应用，像 Next Lock Screen 和 Picturesque Lock Screen 等。这些据说是微软员工在业余时间做的应用，正常使用倒没啥问题，但总觉得有些欠打磨。那这次出的便签应用 Parchi 到底如何，我们一起来看一看。 可能是觉得叫什么 XX Note 不免落俗，便取了这个稀奇古怪的，教人不">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtndTMzSSt0b2FPeElkLy9lOXcwa3ZzTzZlV2c5SDl0azlnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+<meta property="og:updated_time" content="2016-10-17T13:50:42.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Parchi-一款来自微软 Garage 的轻笔记应用">
+<meta name="twitter:description" content="在这之前，Microsoft Garage（微软车库）已经出过几款 Android 应用，像 Next Lock Screen 和 Picturesque Lock Screen 等。这些据说是微软员工在业余时间做的应用，正常使用倒没啥问题，但总觉得有些欠打磨。那这次出的便签应用 Parchi 到底如何，我们一起来看一看。 可能是觉得叫什么 XX Note 不免落俗，便取了这个稀奇古怪的，教人不">
+<meta name="twitter:image" content="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtndTMzSSt0b2FPeElkLy9lOXcwa3ZzTzZlV2c5SDl0azlnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="觉微创意" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">一个有创意爱分享的博客平台</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/影视/">影视</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/软件/">软件</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/软件/">软件</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Parchi-一款来自微软-Garage-的轻笔记应用" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Parchi-一款来自微软 Garage 的轻笔记应用
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2015/11/11/Parchi-一款来自微软-Garage-的轻笔记应用/" class="article-date">
+            <time datetime="2015-11-11T03:35:00.000Z" itemprop="datePublished">2015-11-11</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/APP/">APP</a>
+    </div>
+
+                阅读数量:<span id="/2015/11/11/Parchi-一款来自微软-Garage-的轻笔记应用/" class="leancloud_visitors" data-flag-title="Parchi-一款来自微软 Garage 的轻笔记应用"></span>次
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkNEM0hzUjY0dmtndTMzSSt0b2FPeElkLy9lOXcwa3ZzTzZlV2c5SDl0azlnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg" alt="Parchi-一款来自微软 Garage 的轻笔记应用"></p>
+<p>在这之前，Microsoft Garage（微软车库）已经出过几款 Android 应用，像 Next Lock Screen 和 Picturesque Lock Screen 等。这些据说是微软员工在业余时间做的应用，正常使用倒没啥问题，但总觉得有些欠打磨。那这次出的便签应用 Parchi 到底如何，我们一起来看一看。</p>
+<p>可能是觉得叫什么 XX Note 不免落俗，便取了这个稀奇古怪的，教人不知该如何读的名字 Parchi。当然这可不是瞎起的，根据 Microsoft Garage 页面中的介绍，Parchi 源于印地语中的 pur-chih，指的就是用来记笔记的便签。</p>
+<h2 id="想不想用，先得看颜值"><a href="#想不想用，先得看颜值" class="headerlink" title="想不想用，先得看颜值"></a>想不想用，先得看颜值</h2><p>颜值这东西实在是太重要了，当我还未正式开始使用之前，打开应用的第一眼，可能就决定了我有没有兴趣接着去用。Parchi 这状态栏，这浮动按钮，看上去就感觉非常舒服。在我用便签将这一屏塞满后，我又重新审视了它一番，此时的印象已不如从前，这列表的排版布局有些混乱，不如 Google Keep 的卡片精致、美观。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/df978c443ed88ccd8ec0deb48f45ee27464ba_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/df978c443ed88ccd8ec0deb48f45ee27464ba_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/3089fff69de2c111db1f580a95a95ac1464bb_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/3089fff69de2c111db1f580a95a95ac1464bb_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p>侧边栏运用了大片白背景，总觉得字体略大了些，看上去有些突兀。归档、星标页面和列表页一个样，没便签的时候看着还行，有便签了就有些不和谐了。总之，Parchi 的颜值称不上优秀，只能说还行吧。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/d970236ef90e4ec0f0b0c4a32d66c8b5464bd_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/d970236ef90e4ec0f0b0c4a32d66c8b5464bd_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/a9abaa597d33d52047084830353e34e5464c0_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/a9abaa597d33d52047084830353e34e5464c0_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<h2 id="好不好用，还得看功能"><a href="#好不好用，还得看功能" class="headerlink" title="好不好用，还得看功能"></a>好不好用，还得看功能</h2><p>便签类应用做到现在，似乎已没有什么新鲜功能可以加入。能贴图，能提醒，能备份，功能基本就这些了。所以纵使没有什么让人眼前一亮的功能，只是单纯把基础功能做好，那这照样是一个优秀的便签。</p>
+<p><strong>1. 图文排版</strong></p>
+<p>与绝大多数便签类应用一样，Parchi 支持普通便签与清单便签，除了添加文本，还能够添加图片。在图文排版这方面，Parchi 与 Keep 都是每行 3 张，当图片数量超过 6 张时，Keep 会将多出部分的照片隐藏，始终给文本留出一半的显示空间；而 Parchi 不管你添加多少照片，都会按照每行 3 张的格式排布下去，即使已经把文本挤到下一页 。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/ab457ed9c28a6fdc67b91ec76a00782646472_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/ab457ed9c28a6fdc67b91ec76a00782646472_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/d3075eebe7ac2a91f76785ad9ab5ae9246473_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/d3075eebe7ac2a91f76785ad9ab5ae9246473_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p>这不能算 Parchi 图文排版失败，当你退出这条便签并重新点开时，会发现文本始终是完整显示的（非文本多到一页放不下的情况下）。而且视文本的数量，Parchi 会进行自动调整。所以 Parchi 和 Keep 两者的排版，都是文本优先，只是手段不同，Parchi 不隐藏图片，查找起来相对会更明了一些。但 Parchi 的清单类便签有个缺点，那就是条目不能上下移动调整顺序，且勾选后不能自动归到尾部，这点就没有 Keep 来得方便了。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e8bf0d0ee52a1e123b350b03e4afaeb246476_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e8bf0d0ee52a1e123b350b03e4afaeb246476_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/767342b874633c7fb12c58ae651422fa46477_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/767342b874633c7fb12c58ae651422fa46477_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<div class="row">
+
+<p><strong>2. 提醒</strong></p>
+<p>现在的便签应用既包含了早期备忘录的功能，也具备现在清单应用的一些基本特征。我向来没有用日历来管理待办事项的习惯，记些有时效的事儿，都是用 Keep 和 Parchi 这类带提醒功能的便签类应用来实现。曾一度认为便签的提醒就是闹钟提醒，后来发现是我想的太简单。我现在还是埋怨便签的提醒力道不够强烈，毕竟是个通知提醒，就那么一瞬间，所以重要的事必须得增设个闹钟，上个双重保险。</p>
+<p>Parchi 的提醒也只是通知提醒，当预定时间一到，通知便会到来。如果提醒事件可以拖延，那么可以选择「IN AN HOUR」，让其一小时后再提醒，或者选择「LATER」，手动设置下次提醒的时间，这点与 Keep 是一致的。另外，在提醒通知中，Keep 会显示便签中的第一张图片，同时提醒的便签会自动提到所有便签的最前面，如果是清单便签，Keep 还会在条目之间以「；」分隔，满满的都是谷歌情怀；而 Parchi 这边，虽不会显示图片，但条目之间会由空格隔开，便签的排序也有一定的规律，具体将在下面「添加星标」中提及。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e008b4b065f2f5ed3b0110cd507412b646499_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e008b4b065f2f5ed3b0110cd507412b646499_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/f241283e9e905b027fc3f4267bff12cb4649a_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/f241283e9e905b027fc3f4267bff12cb4649a_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><strong>3. 星标</strong></p>
+<p>在编辑便签页面，可以进行加星标，设提醒，改颜色这三种操作，在列表页，通过点击便签前端的色块，也可快速进行这三种操作。前面提到过，Parchi 清单类便签中的条目不能上下移动调整顺序，与该问题类似，所有便签在列表页的顺序也是不支持自由调整的，但总体遵循着「加星标的在前，后添加（或者修改）的在前」这样一个排序原则。所以要使一条便签排在最前列，这条便签必须同时具备星标和最后被修改这两个条件，虽然 Parchi 的逻辑好像没啥错误，但怎么说呢，还是 Keep 的自由调整最方便。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4917482f12ad11fff6f575e7bdab56e0464a1_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4917482f12ad11fff6f575e7bdab56e0464a1_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/70f400d2c94e7b367b73d4247444af30464a2_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/70f400d2c94e7b367b73d4247444af30464a2_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><strong>4. Tag 标签</strong></p>
+<p>添加 Tag，是对便签进行分类管理的一个非常方便的方法。Keep 将 Tag 简单归为个人、工作、灵感三类，而 Parchi 则细之又细，分作一大堆。当然，除了选择这些内建的 Tag，还可以自行添加新 Tag。</p>
+<p>Parchi 的 Tag 功能有两点比较有意思，一是使用过的 Tag 会排在前列，方便下次快速选择；二是侧边栏内 Tag 不像 Keep 那样一直存在，当且仅当有便签被附以某个或某些 Tag 时，这个或这些 Tag 才会在侧边栏显示出来，因而不会出现当你在 Keep 中点击某个 Tag 时，没有找到任何带有此 Tag 的便签的情况。</p>
+<p>但也不尽是优点，有两点比较遗憾，也让我比较费解，一是内建 Tag 不允许修改、删除；二是要永久保留新建的 Tag，至少要有一条便签是带有这个 Tag 的，也就是说，当带有新建 Tag 的便签被删除或仅 Tag 被取消选中时，那么这个新建的 Tag 也会被从列表中删除。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/a59bfd01786245170112cedb43795ac646470_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/a59bfd01786245170112cedb43795ac646470_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/19c38b1b7495779f97524483e58679b146471_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/19c38b1b7495779f97524483e58679b146471_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><strong>5. 锁屏小组件</strong></p>
+<p>要知道，在 Android 上，这样的应用没有桌面小组件，那是要被不少人诟病的。事实上，Parchi 目前还真的没有桌面小组件，所以要想在桌面上直接查看便签是不可能了。不过，Parchi 提供了一个锁屏小组件，方便在锁屏界面添加或者查看便签。</p>
+<p>喏，就是右上角这个圆形图标。它只能贴边放置，并且能自动记忆最后放置位置，所以你可以将它放在手指容易触碰到的位置。它的放置位置可以调节，但它的工作位置永远在右上角，当你点击它时，它会蹿到右上角展开，关闭它时，它又会回到之前的位置。在锁屏小组件中，输入的文本会被存成普通便签，点击相机图标只能启动 Parchi 内建的拍照功能，虽然不支持手动点击对焦，但可以一次性拍摄多张照片。有一点需要注意，当需要文本和照片存入同一条便签时，必须先输入文本，而后进行拍照，因为结束拍照时，便签就会被存储，且屏幕会被解锁（未设置锁屏密码）。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4e123ae05620f011563fe8690c72dc80464b1_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4e123ae05620f011563fe8690c72dc80464b1_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/ab4be0c8437e98af42280ae1736da398464b2_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/ab4be0c8437e98af42280ae1736da398464b2_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p>锁屏小组件还可以结合 Pin to Lock Screen 这个功能来用，在某一条便签中选择「Pin to Lock Screen」，便能将这条便签 Pin 到锁屏页面，可惜的是只能 Pin 一条，而且点击被 Pin 的便签也不会直接进入 Parchi 中，只能对所 Pin 便签进行关闭操作。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/212aac253bc9e6737c6109bc1be06252464b4_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/212aac253bc9e6737c6109bc1be06252464b4_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e2809e6a0c6b2773c3f6bea41aa8cf83464b5_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/e2809e6a0c6b2773c3f6bea41aa8cf83464b5_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><strong>6. 云端备份</strong></p>
+<p>如果没有备份功能，可能很多人会坚决不用。像 EverMemo 这样极简的便签，不能加图片，不能设置提醒，但它却具备同步的功能。若不是 Parchi 的善意提醒，这功能可能就被我漏过去了。登陆微软帐户后，便能享受到只在 Wi-Fi 环境下进行的自动备份了。</p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4dafc5cd6cb58eb2b6999d3e34e7c14b464b7_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/4dafc5cd6cb58eb2b6999d3e34e7c14b464b7_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/383b744939d8c768de609f24c0b0c8f0464b8_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/383b744939d8c768de609f24c0b0c8f0464b8_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/2b22ed32f7f7d9bab9be5fc052262852464b9_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p><img src="http://cdn.sspai.com/attachment/thumbnail/2015/10/18/2b22ed32f7f7d9bab9be5fc052262852464b9_mw_800_wm_1_wmp_3.jpg" alt="Parchi"></p>
+<p>对于刚推出不久的东西，总是有种惯性思维，有瑕疵是应该的，以后会慢慢改好的。所以对于 Parchi，我同样保持这种看法。现在来看，Parchi 确有不足之处，但没准，Parchi 日后能够成为与 Keep 比肩的应用。对于能用谷歌服务的人，现在劝其转投 Parchi 似乎是不太可能，但对于其他人来说，起码在挑选便签时又多了一个选择。</p>
+<h2 id="Parchi应用下载"><a href="#Parchi应用下载" class="headerlink" title="Parchi应用下载"></a>Parchi应用下载</h2><blockquote>
+<p><a href="http://pan.baidu.com/s/1c0FhiVm" target="_blank" rel="noopener">Parchi下载</a></p>
+</blockquote>
+</div>
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="lv-container" data-id="city" data-uid=MTAyMC8zOTYyOC8xNjE1NQ==></div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jef-way" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/512789487" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2015/11/12/印象笔记-高效的知识管理工具软件APP下载/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            印象笔记-高效的知识管理工具软件APP下载
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2015/11/09/Adobe-Dreamweaver-CC-2015-集所有功能于一身的网页制作工具/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Adobe Dreamweaver CC 2015 - 集所有功能于一身的网页制作工具</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/15/未生-小白职场奋斗记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf1.nosdn.127.net/img/djhlbDd5N3FFVkRVT1c3VTJHdjYyYVJaNGFwNVVtanVla2VKb3hjTDdVVlIvS2t1RGpURnF3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="未生 - 小白职场奋斗记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/15/未生-小白职场奋斗记/" class="title">未生 - 小白职场奋斗记</a></p>
+                            <p class="item-date"><time datetime="2016-05-15T02:42:00.000Z" itemprop="datePublished">2016-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkI1N0Q1N0pOUVJzYWxKZzdudzBNN3hFb1hpVVZuRGxBYWVpeHhGaW5pazNnPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Video Grabber - 基于浏览器的免费在线视频下载工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/14/Video-Grabber-基于浏览器的免费在线视频下载工具/" class="title">Video Grabber - 基于浏览器的免费在线视频下载工具</a></p>
+                            <p class="item-date"><time datetime="2016-05-14T05:57:29.000Z" itemprop="datePublished">2016-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf2.nosdn.127.net/img/djhlbDd5N3FFVkJWQlk1d2NtdU9XRWRPSmtvcGdaRTh0cllNSmNEemZDMD0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Leanote - 简约清爽的开源云笔记软件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/软件/">软件</a></p>
+                            <p class="item-title"><a href="/2016/05/12/Leanote-简约清爽的开源云笔记软件/" class="title">Leanote - 简约清爽的开源云笔记软件</a></p>
+                            <p class="item-date"><time datetime="2016-05-12T07:12:59.000Z" itemprop="datePublished">2016-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/09/gulp-常用到的那些插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf.nosdn.127.net/img/djhlbDd5N3FFVkQyY3kxUXlMNVRsQXlmL211Q2pseGpwVmxwK0RqU2t5TU9hTUpSK0lHdEl3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="gulp - 常用到的那些插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2016/05/09/gulp-常用到的那些插件/" class="title">gulp - 常用到的那些插件</a></p>
+                            <p class="item-date"><time datetime="2016-05-09T03:52:00.000Z" itemprop="datePublished">2016-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/Hero-奇怪的英雄/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://imglf0.nosdn.127.net/img/djhlbDd5N3FFVkFCSXdJNlAxODRWdGxrTk9xelBLUHZEVUVobVhrOHNYU25VMWZLTk9mSHZ3PT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg)" alt="Hero - 奇怪的英雄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/影视/">影视</a></p>
+                            <p class="item-title"><a href="/2016/05/08/Hero-奇怪的英雄/" class="title">Hero - 奇怪的英雄</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T03:51:00.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">57</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/APP/" style="font-size: 18px;">APP</a> <a href="/tags/Adobe/" style="font-size: 12px;">Adobe</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/创意/" style="font-size: 14px;">创意</a> <a href="/tags/前端/" style="font-size: 12px;">前端</a> <a href="/tags/卸载/" style="font-size: 10px;">卸载</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/截图/" style="font-size: 12px;">截图</a> <a href="/tags/插件/" style="font-size: 12px;">插件</a> <a href="/tags/搜索/" style="font-size: 12px;">搜索</a> <a href="/tags/电影/" style="font-size: 12px;">电影</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/编辑器/" style="font-size: 16px;">编辑器</a> <a href="/tags/网盘/" style="font-size: 10px;">网盘</a> <a href="/tags/自动化/" style="font-size: 10px;">自动化</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/韩剧/" style="font-size: 16px;">韩剧</a> <a href="/tags/韩影/" style="font-size: 10px;">韩影</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 觉小微</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'Hktoec1e61LHzQ4DqyaOyfHI-gzGzoHsz';
+    var APP_KEY = 'S2EwlkYJBhT8ScUBKBkI2rwx';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+    // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+        
+    
+    
+    <!-- 来必力City版安装代码 -->
+    <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+
+         if (typeof LivereTower === 'function') { return; }
+
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+    </script>
+  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  <!-- City版安装代码已完成 -->
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

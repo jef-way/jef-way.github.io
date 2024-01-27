@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jef_way.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="今天给大家推荐一款本地影音播放器，它就是 KMPlayer (KMP 播放器) ，它是 Windows 上老牌的知名万能格式视频播放器，几乎可以播放所有主流的多媒体文件 (mkv、avi、rmvb、wmv、flv、mp4 等等)。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="KMPlayer">
+<meta property="og:url" content="http://jef_way.gitee.io/posts/kmplayer.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="今天给大家推荐一款本地影音播放器，它就是 KMPlayer (KMP 播放器) ，它是 Windows 上老牌的知名万能格式视频播放器，几乎可以播放所有主流的多媒体文件 (mkv、avi、rmvb、wmv、flv、mp4 等等)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/kmplayer/intro.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/kmplayer/main.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/kmplayer/video.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/kmplayer/mobile.jpg">
+<meta property="article:published_time" content="2015-10-30T03:05:00.000Z">
+<meta property="article:modified_time" content="2024-01-08T06:50:55.357Z">
+<meta property="article:author" content="jef_way">
+<meta property="article:tag" content="播放器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jef_way.gitee.io/imgs/2024-01-08/kmplayer/intro.jpg">
+
+
+<link rel="canonical" href="http://jef_way.gitee.io/posts/kmplayer.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jef_way.gitee.io/posts/kmplayer.html","path":"posts/kmplayer.html","title":"KMPlayer"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>KMPlayer | 觉微创意</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">觉微创意</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">发现，思考，创造</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KMPlayer-%E7%9A%84%E5%8F%91%E6%8C%A5%E9%87%8D%E8%A6%81%E7%9A%84%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8%E5%86%85%E7%BD%AE%E6%9C%AC%E8%BA%AB"><span class="nav-number">1.</span> <span class="nav-text">KMPlayer 的发挥重要的多媒体编解码器内置本身</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMPlayer-%E7%9A%84%E9%87%8D%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">KMPlayer 的重要功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMPlayer-%E7%A7%BB%E5%8A%A8%E7%89%88"><span class="nav-number">3.</span> <span class="nav-text">KMPlayer 移动版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMPlayer-%E4%B8%8B%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">KMPlayer 下载</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jef_way"
+      src="/images/logo.svg">
+  <p class="site-author-name" itemprop="name">jef_way</p>
+  <div class="site-description" itemprop="description">记录生活中的微妙创意</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plZi13YXk=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jef-way"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxvbmd5aTE5OTFAMTI2LmNvbQ==" title="E-Mail → mailto:longyi1991@126.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jef_way.gitee.io/posts/kmplayer.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.svg">
+      <meta itemprop="name" content="jef_way">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="觉微创意">
+      <meta itemprop="description" content="记录生活中的微妙创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="KMPlayer | 觉微创意">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          KMPlayer
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-10-30 11:05:00" itemprop="dateCreated datePublished" datetime="2015-10-30T11:05:00+08:00">2015-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-08 14:50:55" itemprop="dateModified" datetime="2024-01-08T14:50:55+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/software/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>754</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/../imgs/2024-01-08/kmplayer/intro.jpg" alt="KMPlayer - 强大的免费万能视频格式影音播放器"></p>
+<p>今天给大家推荐一款本地影音播放器，它就是 KMPlayer (KMP 播放器) ，它是 Windows 上老牌的知名万能格式视频播放器，几乎可以播放所有主流的多媒体文件 (mkv、avi、rmvb、wmv、flv、mp4 等等)。</p>
+<span id="more"></span>
+
+<p><img src="/../imgs/2024-01-08/kmplayer/main.jpg" alt="KMPlayer播放界面"></p>
+<p>作为一款优秀的影音播放器，<strong>KMPlayer</strong> 内置了强大的音频和视频解码器，视频回放效果出色，播放高清视频的资源占用也很低，支持外挂字幕加载，支持视觉特效等各种扩展插件，可更换皮肤，软件本身完全免费，综合素质非常出色！而且现在还新增了 Android 和 iOS 版……</p>
+<p><img src="/../imgs/2024-01-08/kmplayer/video.jpg" alt="KMPlayer"></p>
+<h2 id="KMPlayer-的发挥重要的多媒体编解码器内置本身"><a href="#KMPlayer-的发挥重要的多媒体编解码器内置本身" class="headerlink" title="KMPlayer 的发挥重要的多媒体编解码器内置本身"></a>KMPlayer 的发挥重要的多媒体编解码器内置本身</h2><p>因此，它可以发挥媒体无需额外的编解码器和编解码器支持内部&#x2F;外部分为如果语音编解码器的 效果，支持 MPEG1，2，AAC 格式的 WMA7，8，OGG 格式，并支持内置的语音编解码器的功能，当使用矩阵&#x2F;等化器附加功能支持. ffdshow 的 KMPlayer 的编解码器内置，从里面的情况下，因为处理是更快，更安全，支持所有编解码器，支持 MPEG1&#x2F; 2 支持.编解码器的用户安装麻烦，低规格的电脑用户，那些为寻找优秀的多媒体播放体验由 KMP 可以装点简单的多媒体播放体验.</p>
+<h2 id="KMPlayer-的重要功能"><a href="#KMPlayer-的重要功能" class="headerlink" title="KMPlayer 的重要功能"></a>KMPlayer 的重要功能</h2><ul>
+<li>高分辨率的电影的支持看电影在一流的质量支持 3 d、4 k 和 UHD</li>
+<li>支持多种语言，支持全球超过 24 种语言</li>
+<li>不同的格式支持 RTS,MPEG1,的 MPEG2,AAC、WMA7 WMA8,OGG 等</li>
+<li>视频捕捉捕获音频和视频或屏幕截图是可能的,并且可以保存在您想要的格式</li>
+<li>高级选项电影 DVD 提供完全控制选择、菜单、音频菜单、副标题菜单,亮度&#x2F;对比度,以满足用户的需求</li>
+<li>内部编解码器编解码器包的软件,因此可以快速高效地看电影</li>
+</ul>
+<h2 id="KMPlayer-移动版"><a href="#KMPlayer-移动版" class="headerlink" title="KMPlayer 移动版"></a>KMPlayer 移动版</h2><p>KMPlayer Mobile (移动版)和 PC 版一样同样是主打 “万能格式” 播放的优势，一次安装即能通吃几乎所有主流的视频和音频文件格式，经测试在 iPhone 5S 上直接播放 <strong>1080P MKV 格式全高清</strong> 电影效果还是很流畅的;而且，针对手机、平板的触摸屏特点，KMplayer for Android&#x2F;iOS 还支持方便的手势操作和精确的快进&#x2F;后退以及倍速播放等。</p>
+<p><img src="/../imgs/2024-01-08/kmplayer/mobile.jpg" alt="KMPlayer"></p>
+<p>在播放界面上左右滑动可以用于短时间的快进后退，上下滑动可以用于音量调节，你不再需要特意调出进度条就能方便地快进后退或者调整音量了。</p>
+<h2 id="KMPlayer-下载"><a href="#KMPlayer-下载" class="headerlink" title="KMPlayer 下载"></a>KMPlayer 下载</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xbWczdUhlZw==">KMPlayer PC 去广告版下载<i class="fa fa-external-link-alt"></i></span> &gt;<span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xbzZIM0pIUw==">KMPlayer 移动去广告 Android 版下载<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>jef_way
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jef_way.gitee.io/posts/kmplayer.html" title="KMPlayer">http://jef_way.gitee.io/posts/kmplayer.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 播放器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/sketch.html" rel="prev" title="Sketch">
+                  <i class="fa fa-angle-left"></i> Sketch
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/dreamweaver-2015.html" rel="next" title="Dreamweaver CC 2015">
+                  Dreamweaver CC 2015 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jef_way</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.4" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/images/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '36px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

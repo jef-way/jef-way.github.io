@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jef_way.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="如果你是一个喜欢追求高效率和流畅操作的人，那么有两样东西你肯定是痛恨已久，而且又是每天几乎都必须跟它们打交道的，那就是 Windows 的「资源管理器」和「打开&#x2F;保存文件的浏览对话框」。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Listary">
+<meta property="og:url" content="http://jef_way.gitee.io/posts/listary.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="如果你是一个喜欢追求高效率和流畅操作的人，那么有两样东西你肯定是痛恨已久，而且又是每天几乎都必须跟它们打交道的，那就是 Windows 的「资源管理器」和「打开&#x2F;保存文件的浏览对话框」。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/intro.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/wizard.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/main.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/next.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/shear.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/jump.jpg">
+<meta property="article:published_time" content="2016-04-29T02:34:52.000Z">
+<meta property="article:modified_time" content="2024-01-08T05:58:32.179Z">
+<meta property="article:author" content="jef_way">
+<meta property="article:tag" content="搜索">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jef_way.gitee.io/imgs/2024-01-08/listary/intro.jpg">
+
+
+<link rel="canonical" href="http://jef_way.gitee.io/posts/listary.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jef_way.gitee.io/posts/listary.html","path":"posts/listary.html","title":"Listary"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Listary | 觉微创意</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">觉微创意</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">发现，思考，创造</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.</span> <span class="nav-text">Windows 文件浏览对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E5%92%8C%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">功能和版本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E8%B4%B9%E7%89%88%E4%B8%8EPro%E7%89%88%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">免费版与Pro版区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">相关文件下载地址：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jef_way"
+      src="/images/logo.svg">
+  <p class="site-author-name" itemprop="name">jef_way</p>
+  <div class="site-description" itemprop="description">记录生活中的微妙创意</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plZi13YXk=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jef-way"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxvbmd5aTE5OTFAMTI2LmNvbQ==" title="E-Mail → mailto:longyi1991@126.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相关文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/posts/everything.html" rel="bookmark">
+        <time class="popular-posts-time">2016-05-06</time>
+        <br>
+      Everything
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/posts/notation.html" rel="bookmark">
+        <time class="popular-posts-time">2015-11-16</time>
+        <br>
+      Notation极简笔记
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jef_way.gitee.io/posts/listary.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.svg">
+      <meta itemprop="name" content="jef_way">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="觉微创意">
+      <meta itemprop="description" content="记录生活中的微妙创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Listary | 觉微创意">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Listary
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-04-29 10:34:52" itemprop="dateCreated datePublished" datetime="2016-04-29T10:34:52+08:00">2016-04-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-08 13:58:32" itemprop="dateModified" datetime="2024-01-08T13:58:32+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/software/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/../imgs/2024-01-08/listary/intro.jpg" alt="Listary - 提高你 Windows 文件浏览与搜索速度效率"></p>
+<p>如果你是一个喜欢追求高效率和流畅操作的人，那么有两样东西你肯定是痛恨已久，而且又是每天几乎都必须跟它们打交道的，那就是 Windows 的「资源管理器」和「打开&#x2F;保存文件的浏览对话框」。</p>
+<span id="more"></span>
+
+<p>几乎所有软件都会用到文件浏览对话框，但实际上它和资源管理器一样非常低效！没好用的快捷键，文件太多、路径复杂时难以操作，不能收藏常用的目录，在对话框中不能搜索文件，如果每天要来回地打开&#x2F;保存不同目录下的文件简直就是一个噩梦！然而这一切在我遇到 Listary 这款神器后终于彻底改变了！它是一款极为优秀的文件浏览与搜索增强工具，能极大地提高用户的操作速度和效率，用过后你绝对不愿再回到从前……</p>
+<h2 id="Windows-文件浏览对话框"><a href="#Windows-文件浏览对话框" class="headerlink" title="Windows 文件浏览对话框"></a>Windows 文件浏览对话框</h2><p>从十几年前的 Win95 到现在的 Windows 10，虽然系统的版本一直在升级，但其「文件浏览对话框」和「资源管理器」在功能上却都没有什么实质性的改变。可能是基于让更多人会用即可的原则，微软对此并没有做过什么能提高其使用效率的措施。以至于常常在工作时多次打开和保存位于电脑各个不同目录的文件时都能让我崩溃，甚至暴躁得想骂娘～！</p>
+<p>难道微软会认为，当一些文件放在一层层的文件夹里很深，好不容易进去之后，又要不断地“向上”、“向上”去另一个目录，再不断进去进去的来回抽搐活塞运动会让我享受么？！「资源管理器」还能开多个窗口，但在打开或保存文件时就囧了……无论一些软件本身设计得多么快捷好用，常常都会被这个极其低效的文件对话框给拉低水平了。所以我们今天就用 Listary 把它给灭了！！增强一下。</p>
+<p><img src="/../imgs/2024-01-08/listary/wizard.jpg" alt="Listary 中文引导"></p>
+<p>不得不说，我第一次遇到 Listary 时简直如获至宝！它是一款非常优秀的 Windows 文件浏览和搜索增强工具，可以为你 Windows 的「文件浏览对话框」、「资源管理器」等增加非常方便的文件快速定位、实时全盘搜索、常用文件夹收藏、打开历史、快速切换到已打开的路径、快捷右键菜单等一系列非常非常实用和高效的功能，它能将 Windows 的便捷性提高到一个新的高度！</p>
+<h2 id="功能和版本介绍"><a href="#功能和版本介绍" class="headerlink" title="功能和版本介绍"></a>功能和版本介绍</h2><p>Listary 体积小巧，而且运行快速，即便在低配置的电脑上常驻系统使用也不会察觉有丝毫拖慢速度的现象。它提供了简体中文语言，加上前面所说的拼音搜索功能，可以说对中文环境的支持已经达到了完美。虽然官网的介绍视频是英文的，但软件本身也提供了中文的 “教学” 功能，而且本站的视频也算录制得比较详细了，相信大家上手使用应该是无鸭梨的。</p>
+<p><img src="/../imgs/2024-01-08/listary/main.jpg" alt="Listary"></p>
+<p><img src="/../imgs/2024-01-08/listary/next.jpg" alt="Listary"></p>
+<p><img src="/../imgs/2024-01-08/listary/shear.jpg" alt="Listary"></p>
+<p><img src="/../imgs/2024-01-08/listary/jump.jpg" alt="Listary"></p>
+<p>集成在 Windows 资源管理器中的快速搜索和定位功能集成在 Windows 资源管理器中的快速搜索和定位功能</p>
+<p>打开与保存对话框中也能使用打开与保存对话框中也能使用</p>
+<p>而且还能支持 WinRAR 这种第三方软件而且还能支持 WinRAR 这种第三方软件</p>
+<p>Listary 除了支持 Windows 的资源管理器、文件对话框的增强之外，还能提供 TotalCommander、WinRAR、FileZillar、7Zip、XYPlorer、FreeCommander 等知名软件的增强支持，配合它们用起来使用效率更加无敌！此外，如果你喜欢使用 Everything 进行文件搜索的话，Listary 还能与它结合，用它替代自身的搜索功能。</p>
+<h2 id="免费版与Pro版区别"><a href="#免费版与Pro版区别" class="headerlink" title="免费版与Pro版区别"></a>免费版与Pro版区别</h2><p>除了介绍的那些特性之外，Listary 其实还有很多很实用的增强功能和特性，譬如 Project (项目汇聚搜索)、FuzzyNavigation (搜索当前文件夹里面的所有文件)  等特性大家可以下载回去慢慢试用和体会。不过可惜的是，其中很多优秀的功能（如刚提到的两项、还有视频中按右方向键调用文件的菜单等等）都是 Listary Pro 专业版专享的，免费版并不能使用。所以如果你觉得免费版用得不够爽，或者用过觉得这软件确实有用，那么我极度建议你升级到 Pro 版，因为你不仅可以使用目前全部的功能，而且未来版本新增的功能也能全部获得。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5saXN0YXJ5LmNvbS8=">官方网站<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xcEtPRGF3Tg==">下载 Listary 中文版<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>jef_way
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jef_way.gitee.io/posts/listary.html" title="Listary">http://jef_way.gitee.io/posts/listary.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 搜索</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/geekuninstaller.html" rel="prev" title="GeekUninstaller">
+                  <i class="fa fa-angle-left"></i> GeekUninstaller
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/dopdf.html" rel="next" title="doPDF">
+                  doPDF <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jef_way</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.4" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/images/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '36px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

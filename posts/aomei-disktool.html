@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jef_way.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="很多人都遇到过硬盘分区的烦恼问题：新买的笔记本硬盘只有一个分区，文件归类管理很不方便；C盘空间不足&#x2F;太小；以前分区不合理，想要合并&#x2F;分割或者修改容量大小，而又担心重新分区后硬盘数据会丢失。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="傲梅 DiskTool">
+<meta property="og:url" content="http://jef_way.gitee.io/posts/aomei-disktool.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="很多人都遇到过硬盘分区的烦恼问题：新买的笔记本硬盘只有一个分区，文件归类管理很不方便；C盘空间不足&#x2F;太小；以前分区不合理，想要合并&#x2F;分割或者修改容量大小，而又担心重新分区后硬盘数据会丢失。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/intro.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/main.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/partition.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/function.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/virtual.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/save.jpg">
+<meta property="article:published_time" content="2016-04-20T03:28:00.000Z">
+<meta property="article:modified_time" content="2024-01-08T06:09:09.780Z">
+<meta property="article:author" content="jef_way">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jef_way.gitee.io/imgs/2024-01-08/aomei-disktool/intro.jpg">
+
+
+<link rel="canonical" href="http://jef_way.gitee.io/posts/aomei-disktool.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jef_way.gitee.io/posts/aomei-disktool.html","path":"posts/aomei-disktool.html","title":"傲梅 DiskTool"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>傲梅 DiskTool | 觉微创意</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">觉微创意</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">发现，思考，创造</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E6%8D%9F%E5%88%86%E5%8C%BA%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">无损分区工具软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8C%BA%E5%8A%A9%E6%89%8B%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">分区助手的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%AD%A2%E8%AF%AF%E6%93%8D%E4%BD%9C%E2%80%94%E8%99%9A%E6%8B%9F%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">防止误操作—虚拟操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">相关文件下载地址：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jef_way"
+      src="/images/logo.svg">
+  <p class="site-author-name" itemprop="name">jef_way</p>
+  <div class="site-description" itemprop="description">记录生活中的微妙创意</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plZi13YXk=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jef-way"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxvbmd5aTE5OTFAMTI2LmNvbQ==" title="E-Mail → mailto:longyi1991@126.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jef_way.gitee.io/posts/aomei-disktool.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.svg">
+      <meta itemprop="name" content="jef_way">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="觉微创意">
+      <meta itemprop="description" content="记录生活中的微妙创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="傲梅 DiskTool | 觉微创意">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          傲梅 DiskTool
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-04-20 11:28:00" itemprop="dateCreated datePublished" datetime="2016-04-20T11:28:00+08:00">2016-04-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-08 14:09:09" itemprop="dateModified" datetime="2024-01-08T14:09:09+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/software/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/../imgs/2024-01-08/aomei-disktool/intro.jpg" alt="傲梅 DiskTool -  免费的中文版硬盘无损分区助手"></p>
+<p>很多人都遇到过硬盘分区的烦恼问题：新买的笔记本硬盘只有一个分区，文件归类管理很不方便；C盘空间不足&#x2F;太小；以前分区不合理，想要合并&#x2F;分割或者修改容量大小，而又担心重新分区后硬盘数据会丢失。</p>
+<span id="more"></span>
+
+<p>其实如今的无损分区软件已经能很有效地在保留原来硬盘数据的情况下重新分区了！不过它们大部分都是英文版软件，部分还要付费。而今天推荐的 DiskTool 傲梅分区助手 则是一款完全免费、全中文的国产无损分区工具 ！它非常易于上手，可帮你轻松无损调整分区大小、合并&#x2F;切割分区、转换分区格式等……</p>
+<h2 id="无损分区工具软件"><a href="#无损分区工具软件" class="headerlink" title="无损分区工具软件"></a>无损分区工具软件</h2><p>分区助手是一款免费、专业级的无损分区工具，提供简单、易用的磁盘分区管理操作。作为传统分区魔法师的替代者，在操作系统兼容性方面，傲梅分区软件打破了以前的分区软件兼容差的缺点，它完美兼容全部操作系统。</p>
+<p>不仅如此，分区助手从调整分区大小等方面出发，能无损数据地实现扩大分区，缩小分区，合并分区，拆分分区，快速分区，克隆磁盘等操作。此外，它也能迁移系统到固态硬盘，是一个不可多得分区工具。</p>
+<p><img src="/../imgs/2024-01-08/aomei-disktool/main.jpg" alt="分区助手分区助手截图"></p>
+<p>分区助手可以完美支持 Win PE、2000、XP、Vista、Win7、Win8&#x2F;8.1、Windows 10 等系统。而且不管是普通用户还是服务器操作系统用户 (Windows Server 2003 &#x2F; 2008 等)，分区助手都能提供全功能、稳定可靠的硬盘分区功能。</p>
+<p><img src="/../imgs/2024-01-08/aomei-disktool/partition.jpg" alt="无损分区无损调整分区大小"></p>
+<h2 id="分区助手的功能"><a href="#分区助手的功能" class="headerlink" title="分区助手的功能"></a>分区助手的功能</h2><p><img src="/../imgs/2024-01-08/aomei-disktool/function.jpg" alt="傲梅 DiskTool"></p>
+<p>使用分区助手，你除了可以实现如增加删除分区、格式化、磁盘格式转换(如FAT32无损转成NTFS)、改变盘符的基本操作之外，还能实现很多高级操作，譬如4K对齐、MBR与GPT磁盘互转等，下面是功能列表：</p>
+<ul>
+<li>调整分区大小：将分区的大小扩大或将分区缩小</li>
+<li>快速分区：为装机童鞋提供最方便和快速的“快速分区”操作</li>
+<li>合并与拆分分区：合并两个或多个分区到一个分区，拆分一个大分区到多个小分区</li>
+<li>分配空闲空间：重新分配磁盘上的未分配空间给己存在的分区</li>
+<li>创建，删除与格式化：基本分区操作，不管什么情况下都可以直接的创建新分区</li>
+<li>复制磁盘与分区&#x2F;磁盘克隆：克隆硬盘所有数据到另一块硬盘上</li>
+<li>擦除磁盘与分区：擦除磁盘或分区以防止删除的隐私数据被恢复</li>
+<li>分区按扇区对齐：将分区按4KB，8KB等扇区对齐，优化数据存取速度</li>
+<li>主逻辑分区互转：主分区与逻辑分区之间的相互转换</li>
+<li>分区格式转换：如将 FAT32 无损转换到 NTFS等</li>
+<li>MBR与GPT磁盘互转：无损数据互转MBR磁盘和GPT磁盘</li>
+<li>命令行无损分区：您可以使用或集成分区助手的命令行让无损分区更方便</li>
+<li>迁移系统到SSD：将系统盘迁移到固态硬盘，以提高系统的启动与运行速度</li>
+<li>分区恢复：将硬盘上的误删除或无故丢失的分区恢复回来</li>
+<li>隐藏或取消隐藏分区：将不希望别人随意看到的分区隐藏掉</li>
+</ul>
+<h2 id="防止误操作—虚拟操作"><a href="#防止误操作—虚拟操作" class="headerlink" title="防止误操作—虚拟操作"></a>防止误操作—虚拟操作</h2><p>和大多数无损分区软件一样，DiskTool 分区助手 同样是使用了“虚拟操作”的功能，就是你在更改磁盘分区的时候，它能“预览”显示分区后的改变，不过这时只是“虚拟”的，你可以随时取消，并不会真正影响到你的硬盘。只有在你完全确定好之后它才会为你真实地对硬盘进行分区，最大限度防止了误操作的发生。</p>
+<p><img src="/../imgs/2024-01-08/aomei-disktool/virtual.jpg" alt="分区助手无损切割分区"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>分区助手可以支持几乎全系列的 Windows 系统，支持 32 位以及 64位，同时也支持FAT、FAT32 和 NTFS 文件系统，支持磁盘与分区的容量从100MB到4TB，在一个系统中支持磁盘的数量多达64块，并支持所有硬件 RAID 和 IDE，SATA，SCSI，USB，FireWire 等接口类型的硬盘，支持EFI&#x2F;UEFI启动方式的电脑，兼容性相当好，基本上能满足所有 Win 用户的需求了。</p>
+<p><img src="/../imgs/2024-01-08/aomei-disktool/save.jpg" alt="分区对齐SSD 硬盘分区对齐"></p>
+<p>据了解，分区助手的英文版 “Aomei Partition Assistant” 在海外的售价约 49 美元，而开发团队为国内用户推出的中文版则完全免费。这一点还是很厚道的！总之，如果你新买了电脑，或者已有数据的硬盘需要重新分区，而又觉得国外英文版的分区软件太复杂，那么就试试这款国产的分区助手吧！</p>
+<p>最后，值得一说的是，尽管软件宣传是可以进行无损分区，但凡事都有意外的可能 (譬如分区过程中断电)，还是会有风险的。因此强烈建议大家在执行任何操作前，务必先想办法将重要的文件备份好！！否则万一数据真丢了谁都帮不了你哦。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5kaXNrdG9vbC5jbi8=">官方网站<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xYzJqck1WbQ==">下载分区助手<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>jef_way
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jef_way.gitee.io/posts/aomei-disktool.html" title="傲梅 DiskTool">http://jef_way.gitee.io/posts/aomei-disktool.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/tool/" rel="tag"><i class="fa fa-tag"></i> 工具</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/undefined.html" rel="prev" title="GitHub Desktop">
+                  <i class="fa fa-angle-left"></i> GitHub Desktop
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/nexusfont.html" rel="next" title="NexusFont">
+                  NexusFont <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jef_way</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.4" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/images/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '36px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

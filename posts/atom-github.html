@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jef_way.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的 VIM、Emacs 以及如今当红的SublimeText。另外还有 EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Atom - Github">
+<meta property="og:url" content="http://jef_way.gitee.io/posts/atom-github.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的 VIM、Emacs 以及如今当红的SublimeText。另外还有 EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/atom-github/intro.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/atom-github/main.jpg">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/atom-github/color.jpg">
+<meta property="article:published_time" content="2015-11-27T08:55:00.000Z">
+<meta property="article:modified_time" content="2024-01-08T06:38:27.095Z">
+<meta property="article:author" content="jef_way">
+<meta property="article:tag" content="编辑器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jef_way.gitee.io/imgs/2024-01-08/atom-github/intro.jpg">
+
+
+<link rel="canonical" href="http://jef_way.gitee.io/posts/atom-github.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jef_way.gitee.io/posts/atom-github.html","path":"posts/atom-github.html","title":"Atom - Github"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Atom - Github | 觉微创意</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">觉微创意</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">发现，思考，创造</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B1-GitHub-%E6%89%93%E9%80%A0%E6%9B%B4%E4%B8%BA%E5%85%88%E8%BF%9B%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">由 GitHub 打造更为先进的编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%B0%E4%BB%A3%E5%8C%96%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8-%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">现代化代码编辑器&#x2F;文本编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C-GIT-%E5%AE%8C%E7%BE%8E%E7%BB%93%E5%90%88%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">和 GIT 完美结合工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E-WEB-%E6%8A%80%E6%9C%AF%E6%9E%84%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">基于 WEB 技术构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atom-%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E6%A0%B7%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">Atom 编辑器到底怎么样？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">相关文件下载地址：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jef_way"
+      src="/images/logo.svg">
+  <p class="site-author-name" itemprop="name">jef_way</p>
+  <div class="site-description" itemprop="description">记录生活中的微妙创意</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plZi13YXk=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jef-way"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxvbmd5aTE5OTFAMTI2LmNvbQ==" title="E-Mail → mailto:longyi1991@126.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相关文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/posts/undefined.html" rel="bookmark">
+        <time class="popular-posts-time">2016-04-19</time>
+        <br>
+      GitHub Desktop
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/posts/sublime-text.html" rel="bookmark">
+        <time class="popular-posts-time">2015-10-26</time>
+        <br>
+      Sublime Text
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/posts/visual-studio-code.html" rel="bookmark">
+        <time class="popular-posts-time">2016-04-16</time>
+        <br>
+      Visual Studio Code
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jef_way.gitee.io/posts/atom-github.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.svg">
+      <meta itemprop="name" content="jef_way">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="觉微创意">
+      <meta itemprop="description" content="记录生活中的微妙创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Atom - Github | 觉微创意">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Atom - Github
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-11-27 16:55:00" itemprop="dateCreated datePublished" datetime="2015-11-27T16:55:00+08:00">2015-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-08 14:38:27" itemprop="dateModified" datetime="2024-01-08T14:38:27+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/software/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/../imgs/2024-01-08/atom-github/intro.jpg" alt="Atom - Github 打造的下一代编程开发利器"></p>
+<p>在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的 VIM、Emacs 以及如今当红的<span class="exturl" data-url="aHR0cDovL3d3dy5qZWZ3YXkuY29tL3N1YmxpZW0tdGV4dC5odG1s">SublimeText<i class="fa fa-external-link-alt"></i></span>。另外还有 EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。</p>
+<span id="more"></span>
+
+<p>然而，作为目前全球范围内影响力最大的代码仓库&#x2F;开源社区，GitHub 的程序员们并不满足于此。他们使用目前最先进流行的技术重新打造了一款称为“属于 21 世纪”的代码编辑器——<strong>Atom</strong>， 它开源免费跨平台，并且整合 GIT 并提供类似 SublimeText 的包管理功能，支持插件扩展，可配置性非常高……</p>
+<h2 id="由-GitHub-打造更为先进的编辑器"><a href="#由-GitHub-打造更为先进的编辑器" class="headerlink" title="由 GitHub 打造更为先进的编辑器"></a>由 GitHub 打造更为先进的编辑器</h2><p>Atom 代码编辑器支持 Windows、Mac、Linux 三大桌面平台，完全免费，并且已经在 GitHub 上开放了全部的源代码。在经过一段长时间的迭代开发和不断改进后，Atom 终于从早期的测试版达到了 1.0 正式版了！相比之前的版本，在性能和稳定性方面都有着显著的改善。</p>
+<p><img src="/../imgs/2024-01-08/atom-github/main.jpg" alt="Atom"></p>
+<p>开发团队将 Atom 称为一个“为 21 世纪创造的可配置的编辑器”，它拥有非常精致细腻的界面，并且可配置项丰富，加上它提供了与 SublimeText 上类似的 Package Control (包管理)功能，人们可以非常方便地安装和管理各种插件，并将 Atom 打造成真正适合自己的开发工具。</p>
+<h2 id="现代化代码编辑器-文本编辑器"><a href="#现代化代码编辑器-文本编辑器" class="headerlink" title="现代化代码编辑器&#x2F;文本编辑器"></a>现代化代码编辑器&#x2F;文本编辑器</h2><p>作为一个现代的代码编辑器，Atom 有着各种流行编辑器都有的特性，功能上非常丰富，支持各种编程语言的代码高亮(HTML &#x2F; CSS &#x2F; Javascript &#x2F; PHP &#x2F; Python &#x2F; C &#x2F; C++ &#x2F; Objective C &#x2F; Java &#x2F; JSON &#x2F; Perl &#x2F; CoffeeScript &#x2F; Go &#x2F; Sass &#x2F; YAML &#x2F; Markdown 等等)、 与大多数其他编辑器相比，Atom 的语言支持已经算是覆盖非常全面了。另外，它的代码补全功能（也叫 Snippets） 也非常好用，你只需输入几个字符即可展开成各种常用代码，可以极大提高编程效率。</p>
+<p><img src="/../imgs/2024-01-08/atom-github/color.jpg" alt="Atom"></p>
+<p>另外，Atom 同样支持 SublimeText 的几个重要的功能，譬如 Goto Anything、Goto Symbol、Goto Line、命令面板等等，就连快捷键也是一模一样的！相信 ST 的用户将会比较轻松地过渡到 Atom 去。实际上，从功能上来看，目前的 Atom 编辑器基本就是 Sublime 的一个复刻版，只是技术实现方式不同，插件的技术也有所差异。</p>
+<h2 id="和-GIT-完美结合工作"><a href="#和-GIT-完美结合工作" class="headerlink" title="和 GIT 完美结合工作"></a>和 GIT 完美结合工作</h2><p>Atom 编辑器可以和 GIT 完美结合，所有对代码、文本的修改都能体现在编辑器的界面上。比如在文件内新写的代码会在左边标记为绿色，删除的标记为红色，修改的标记为黄色。在左边的目录导航也能方便的看到文件改动：有改动的文件其文件名和所在文件夹名都会被标记为高亮显示。编辑器底部会显示当前所在分支和对文件的修改行数统计，对于 GIT 用户来说非常方便。</p>
+<h2 id="基于-WEB-技术构建"><a href="#基于-WEB-技术构建" class="headerlink" title="基于 WEB 技术构建"></a>基于 WEB 技术构建</h2><p>和之前介绍过的微软 Visual Studio Code 编辑器一样，Atom 也是基于 WEB 技术（Chromium+Node.js）开发的，简单理解的话编辑器本身其实是一个跑在本地的网页，这足以让无数 WEB 工程师为之兴奋！用户可以用 Javascript 来编写编辑器插件，用 CSS 把主题界面改成任何你喜欢的样式等，这使得编写插件、主题、二次开发的门槛的降低了许多。这也能解释从 Atom 发布到现在不长的时间里，Atom 的 Package 和主题数量都快速增长上来了。</p>
+<p>不过，也正因为它基于 WEB 技术构建的，目前处于初步阶段的 Atom 在性能上与传统的编辑器还有点差距，在打开大文件时尤为明显，而在一些机器上也容易出现 CPU 占用率过高等问题，这一点确实有待改进，而且还是需要大幅改进。</p>
+<h2 id="Atom-编辑器到底怎么样？"><a href="#Atom-编辑器到底怎么样？" class="headerlink" title="Atom 编辑器到底怎么样？"></a>Atom 编辑器到底怎么样？</h2><p>那么，很多人关心的是，Atom 与主流的编辑器对比会怎么样？其实，在我看来， Atom 目前还不太适合用做主力编辑器，虽然它的功能与 SublimeText 较为接近，但现在的它和 Sublime 相比还是稚嫩了一点，毕竟现在 Sublime 已经非常成熟了，后者有很全面的内置功能，也有非常丰富的插件包和活跃的社区，而 Atom 则还需给予时间让其发展。</p>
+<p>不过由于 Atom 是由 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tLw==">Github<i class="fa fa-external-link-alt"></i></span> 维护的，它拥有非常强大的后台。并且那里有着大量极为优秀的编程爱好者，也是极客们的聚集地，相信在不久的将来 Atom 一定也会拥有不少新的插件包，而性能方面的缺点迟早也会被解决掉。</p>
+<p>对于喜欢追求新鲜技术的极客和程序员们，Atom 肯定将会是你的一个不错的新玩物，毕竟它是开源社区的产物，并且也代表着 WEB 技术进入桌面程序开发的新方向。纵使目前它还有不少的进步的空间，但一旦它解决了性能问题、建立了丰富强大的插件库，开源且跨平台的 Atom 编辑器将会成为业界新宠。</p>
+<h2 id="相关文件下载地址："><a href="#相关文件下载地址：" class="headerlink" title="相关文件下载地址："></a>相关文件下载地址：</h2><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hdG9tLmlvLw==">官方网站<i class="fa fa-external-link-alt"></i></span> &gt;<span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xbzZOQjQ4YQ==">Atom 编辑器快捷键列表<i class="fa fa-external-link-alt"></i></span> &gt;<span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xYzBtY2x2cQ==">下载 Atom 编辑器 (Win)<i class="fa fa-external-link-alt"></i></span> &gt;<span class="exturl" data-url="aHR0cDovL3Bhbi5iYWlkdS5jb20vcy8xYm5seXFvMw==">下载 Atom 编辑器 (Mac)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>jef_way
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jef_way.gitee.io/posts/atom-github.html" title="Atom - Github">http://jef_way.gitee.io/posts/atom-github.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/editor/" rel="tag"><i class="fa fa-tag"></i> 编辑器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/notation.html" rel="prev" title="Notation极简笔记">
+                  <i class="fa fa-angle-left"></i> Notation极简笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/typora.html" rel="next" title="Typora写作利器">
+                  Typora写作利器 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jef_way</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.4" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/images/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '36px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>

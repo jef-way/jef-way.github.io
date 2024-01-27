@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"jef_way.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Vagrant跨平台开发">
+<meta property="og:url" content="http://jef_way.gitee.io/posts/vagrant.html">
+<meta property="og:site_name" content="觉微创意">
+<meta property="og:description" content="做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jef_way.gitee.io/imgs/2024-01-08/vagrant/intro.jpg">
+<meta property="article:published_time" content="2016-03-27T06:31:00.000Z">
+<meta property="article:modified_time" content="2024-01-08T07:36:39.138Z">
+<meta property="article:author" content="jef_way">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jef_way.gitee.io/imgs/2024-01-08/vagrant/intro.jpg">
+
+
+<link rel="canonical" href="http://jef_way.gitee.io/posts/vagrant.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jef_way.gitee.io/posts/vagrant.html","path":"posts/vagrant.html","title":"Vagrant跨平台开发"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vagrant跨平台开发 | 觉微创意</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">觉微创意</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">发现，思考，创造</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">Vagrant 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">环境设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E5%88%B0-Vagrant"><span class="nav-number">3.1.</span> <span class="nav-text">添加镜像到 Vagrant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="nav-number">3.2.</span> <span class="nav-text">初始化开发环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">其他设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vagrant-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">Vagrant 网络配置的三种模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vagrant-%E7%9B%AE%E5%BD%95%E6%98%A0%E5%B0%84"><span class="nav-number">4.2.</span> <span class="nav-text">Vagrant 目录映射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-%E6%89%93%E5%8C%85%E5%88%86%E5%8F%91"><span class="nav-number">5.</span> <span class="nav-text">Vagrant 打包分发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">Vagrant 常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vagrant-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">7.</span> <span class="nav-text">Vagrant 的一些注意事项</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jef_way"
+      src="/images/logo.svg">
+  <p class="site-author-name" itemprop="name">jef_way</p>
+  <div class="site-description" itemprop="description">记录生活中的微妙创意</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2plZi13YXk=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jef-way"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxvbmd5aTE5OTFAMTI2LmNvbQ==" title="E-Mail → mailto:longyi1991@126.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jef_way.gitee.io/posts/vagrant.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.svg">
+      <meta itemprop="name" content="jef_way">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="觉微创意">
+      <meta itemprop="description" content="记录生活中的微妙创意">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vagrant跨平台开发 | 觉微创意">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vagrant跨平台开发
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-03-27 14:31:00" itemprop="dateCreated datePublished" datetime="2016-03-27T14:31:00+08:00">2016-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-08 15:36:39" itemprop="dateModified" datetime="2024-01-08T15:36:39+08:00">2024-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/frontend/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/../imgs/2024-01-08/vagrant/intro.jpg" alt="Vagrant - 帮你实现跨平台开发环境"></p>
+<p>做Web开发少不了要在本地搭建好开发环境，虽然说目前各种脚本都有对应的Windows版，甚至是一键安装包，但很多时候和Windows环境的相性并不是那么好，各麻烦的问题是实际部署的环境通常是Linux，常常还要面临着开发和部署环境不一致，上线前还要大量的调试。更要命的是，如果有很多机器需要装的话，那就真是一个灾难了。</p>
+<span id="more"></span>
+
+<p>Windows下玩Linux少不了虚拟机，但装系统依旧是相当费事。在现在什么都在自动化的今天，Vagrant就是这么一个神器，基于Ruby开发，使用开源 VirtualBox 作为虚拟化支持，可以轻松的跨平台部署。</p>
+<p>今天试着把几台机器的环境都换成Vagrant，很爽很顺畅，于是就试着整理了一下使用小结：</p>
+<h2 id="Vagrant-是什么？"><a href="#Vagrant-是什么？" class="headerlink" title="Vagrant 是什么？"></a>Vagrant 是什么？</h2><p>Vagrant 是一款用来构建虚拟开发环境的工具，非常适合 php&#x2F;python&#x2F;ruby&#x2F;java 这类语言开发 web 应用，“代码在我机子上运行没有问题”这种说辞将成为历史。</p>
+<p>我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac&#x2F;Windows&#x2F;Linux）上开发程序，代码却能统一在封装好的环境里运行，非常霸气。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>下载安装 VirtualBox ：<span class="exturl" data-url="aHR0cHM6Ly93d3cudmlydHVhbGJveC5vcmcv">https://www.virtualbox.org/<i class="fa fa-external-link-alt"></i></span></p>
+<p>下载安装 Vagrant ：<span class="exturl" data-url="aHR0cDovL3d3dy52YWdyYW50dXAuY29tLw==">http://www.vagrantup.com/<i class="fa fa-external-link-alt"></i></span></p>
+<p>下载需要使用的 box ：</p>
+<p>官方提供的范例：<span class="exturl" data-url="aHR0cDovL2ZpbGVzLnZhZ3JhbnR1cC5jb20vcHJlY2lzZTMyLmJveA==">http://files.vagrantup.com/precise32.box<i class="fa fa-external-link-alt"></i></span></p>
+<p>还可以在 <span class="exturl" data-url="aHR0cDovL3d3dy52YWdyYW50Ym94LmVzLw==">http://www.vagrantbox.es/<i class="fa fa-external-link-alt"></i></span> 这里下载更多不同系统甚至是已经配置好环境直接可以用的box，虽然可以直接在Vagrant直接使用网址，由Vagrant自动下载安装，但是考虑到网络情况，还是建议自行先下载好。</p>
+<p>由于习惯用CentOS，于是我就下了CentOS 6.3 x86_64 minimal，这个Box根据个人情况进行选择即可。</p>
+<h2 id="环境设置"><a href="#环境设置" class="headerlink" title="环境设置"></a>环境设置</h2><h3 id="添加镜像到-Vagrant"><a href="#添加镜像到-Vagrant" class="headerlink" title="添加镜像到 Vagrant"></a>添加镜像到 Vagrant</h3><p>假设我们下载的镜像存放路径是 <code>E:/box/precise64.box</code>，在终端里输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add base CentOS-6.3-x86_64-minimal.box</span><br></pre></td></tr></table></figure>
+
+<p><code>base</code> 是我们给这个 box 命的名字，<code>E:/box/precise64.box</code> 是 box 所在路径</p>
+<h3 id="初始化开发环境"><a href="#初始化开发环境" class="headerlink" title="初始化开发环境"></a>初始化开发环境</h3><p>创建一个开发目录（比如：<code>E:/dev</code>），你也可以使用已有的目录，切换到开发目录里，用 <code>base</code> 镜像初始化当前目录的环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> E:/dev  <span class="comment"># 切换目录</span></span><br><span class="line">$ vagrant init base  <span class="comment"># 初始化</span></span><br><span class="line">$ vagrant up  <span class="comment"># 启动环境</span></span><br></pre></td></tr></table></figure>
+
+<p>你会看到终端显示了启动过程，启动完成后，我们就可以用 SSH 登录虚拟机了，剩下的步骤就是在虚拟机里配置你要运行的各种环境和参数了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh  <span class="comment"># SSH 登录</span></span><br><span class="line">$ <span class="built_in">cd</span> /vagrant  <span class="comment"># 切换到开发目录，也就是宿主机上的 `E:/dev`</span></span><br></pre></td></tr></table></figure>
+
+<p><code>E:/dev</code> 目录对应虚拟机中的目录是 <code>/vagrant</code></p>
+<p><strong>Windows 用户注意：</strong>Windows 终端并不支持 ssh，所以需要安装第三方 SSH 客户端，比如：Putty、Cygwin 等。</p>
+<h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><p>Vagrant 初始化成功后，会在初始化的目录里生成一个 <code>Vagrantfile</code> 的配置文件，可以修改配置文件进行个性化的定制。</p>
+<p>Vagrant 默认是使用端口映射方式将虚拟机的端口映射本地从而实现类似 <code>http://localhost:80</code> 这种访问方式，这种方式比较麻烦，新开和修改端口的时候都得编辑。相比较而言，host-only 模式显得方便多了。打开 <code>Vagrantfile</code>，将下面这行的注释去掉（移除 <code>#</code>）并保存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: <span class="string">&quot;192.168.33.10&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>重启虚拟机，这样我们就能用 <code>192.168.33.10</code> 访问这台机器了，你可以把 IP 改成其他地址，只要不产生冲突就行。</p>
+<h3 id="Vagrant-网络配置的三种模式"><a href="#Vagrant-网络配置的三种模式" class="headerlink" title="Vagrant 网络配置的三种模式"></a>Vagrant 网络配置的三种模式</h3><p>1、较为常用是端口映射，就是将虚拟机中的端口映射到宿主机对应的端口直接使用 ，在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :forwarded_port, guest: 80, host: 8080</span><br></pre></td></tr></table></figure>
+
+<p><code>guest: 80</code> 表示虚拟机中的80端口， <code>host: 8080</code> 表示映射到宿主机的8080端口。</p>
+<p>2、如果需要自己自由的访问虚拟机，但是别人不需要访问虚拟机，可以使用private_network，并为虚拟机设置IP ，在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :private_network, ip: <span class="string">&quot;192.168.1.104&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>192.168.1.104</code> 表示虚拟机的IP，多台虚拟机的话需要互相访问的话，设置在相同网段即可</p>
+<p>3、如果需要将虚拟机作为当前局域网中的一台计算机，由局域网进行<code>DHCP</code>，那么在<code>Vagrantfile</code>中配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network :public_network</span><br></pre></td></tr></table></figure>
+
+<h3 id="Vagrant-目录映射"><a href="#Vagrant-目录映射" class="headerlink" title="Vagrant 目录映射"></a>Vagrant 目录映射</h3><p>既然是开发环境，那么开发工作肯定还是需要在本地完成，而不是都要进到虚拟机中去完成，虚拟机就好好在后台运行服务就好了，不然就本末倒置了，所以这里就需要使用目录映射功能，将本地的目录映射到虚拟机的对应目录。</p>
+<p>默认情况下，当前的工作目录，会被映射到虚拟机的 <code>/vagrant</code> 目录，当前目录下的文件可以直接在 <code>/vagrant</code> 下进行访问，当然也可以在通过 <code>ln</code> 创建软连接，如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -fs /vagrant/wwwroot /var/www</span><br></pre></td></tr></table></figure>
+
+<p>来进行目录映射，当然，从自动化配置的角度，能不进系统就不需要进系统，所以在Vagrant也可以进行目录映射的操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.synced_folder <span class="string">&quot;wwwroot/&quot;</span>, <span class="string">&quot;/var/www&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>前面的参数 “<code>wwwroot/</code>”  表示的是本地的路径，这里使用对于工作目录的相对路径，这里也可以使用绝对路径，比如： “<code>E:/www/</code>”</p>
+<p>后面的参数 “<code>/var/www</code>” 表示虚拟机中对应映射的目录。</p>
+<h2 id="Vagrant-打包分发"><a href="#Vagrant-打包分发" class="headerlink" title="Vagrant 打包分发"></a>Vagrant 打包分发</h2><p>当你配置好开发环境后，退出并关闭虚拟机。在终端里对开发环境进行打包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant package</span><br></pre></td></tr></table></figure>
+
+<p>打包完成后会在当前目录生成一个 <code>package.box</code> 的文件，将这个文件传给其他用户，其他用户只要添加这个 box 并用其初始化自己的开发目录就能得到一个一模一样的开发环境了。</p>
+<h2 id="Vagrant-常用命令"><a href="#Vagrant-常用命令" class="headerlink" title="Vagrant 常用命令"></a>Vagrant 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant init  <span class="comment"># 初始化</span></span><br><span class="line">$ vagrant up  <span class="comment"># 启动虚拟机</span></span><br><span class="line">$ vagrant halt  <span class="comment"># 关闭虚拟机</span></span><br><span class="line">$ vagrant reload  <span class="comment"># 重启虚拟机</span></span><br><span class="line">$ vagrant ssh  <span class="comment"># SSH 至虚拟机</span></span><br><span class="line">$ vagrant status  <span class="comment"># 查看虚拟机运行状态</span></span><br><span class="line">$ vagrant destroy  <span class="comment"># 销毁当前虚拟机</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Vagrant-的一些注意事项"><a href="#Vagrant-的一些注意事项" class="headerlink" title="Vagrant 的一些注意事项"></a>Vagrant 的一些注意事项</h2><p>使用 <code>Apache/Nginx</code> 时会出现诸如图片修改后但页面刷新仍然是旧文件的情况，是由于静态文件缓存造成的。需要对虚拟机里的 <code>Apache/Nginx</code> 配置文件进行修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Apache 配置添加:</span></span><br><span class="line">EnableSendfile off</span><br><span class="line"></span><br><span class="line"><span class="comment"># Nginx 配置添加:</span></span><br><span class="line">sendfile off;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>jef_way
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jef_way.gitee.io/posts/vagrant.html" title="Vagrant跨平台开发">http://jef_way.gitee.io/posts/vagrant.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 开发</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/vimium.html" rel="prev" title="Vimium">
+                  <i class="fa fa-angle-left"></i> Vimium
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/hexo-blog.html" rel="next" title="Hexo博客搭建">
+                  Hexo博客搭建 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2015 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">jef_way</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.4" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/images/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '36px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>
